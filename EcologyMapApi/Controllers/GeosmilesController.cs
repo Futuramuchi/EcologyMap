@@ -17,7 +17,7 @@ namespace EcologyMapApi.Controllers
 
         public IHttpActionResult Get() 
         {
-            var geosmiles = _ent.Geosmile.ToList().ConvertAll(x => new GeosmileModel(x));
+            var geosmiles = GeosmileModel.Geosmile(_ent.Geosmile.ToList());
 
             return Ok(geosmiles);
         }

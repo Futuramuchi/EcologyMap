@@ -17,7 +17,61 @@ namespace EcologyMapApi.Controllers
 
         public IHttpActionResult GetAll()
         {
-            var points = _ent.Point.ToList().ConvertAll(x => new PointModel(x));
+            var points = _ent.Point.Select(x => new PointModel()
+            {
+                Id = x.Id,
+                Latitude = x.Latitude,
+                Longitude = x.Longitude,
+                AirState = new AirStateModel()
+                {
+                    Id = x.AirState.Id,
+                    CO2Value = x.AirState.CO2Value,
+                    Dust = x.AirState.Dust,
+                    NO2Value = x.AirState.NO2Value
+                },
+                Geosmile = new GeosmileModel()
+                {
+                    Id = x.Geosmile.Id,
+                    Image = x.Geosmile.Image,
+                    Name = x.Geosmile.Name,
+                    TemperatureMaxValue = x.Geosmile.TemparatureMaxValue,
+                    TemperatureMinValue = x.Geosmile.TemparatureMinValue,
+                    Weather = x.Geosmile.Weather
+                },
+                SoilState = new SoilStateModel()
+                {
+                    Id = x.SoilState.Id,
+                    Category = new CategoryModel()
+                    {
+                        Id = x.SoilState.Category.Id,
+                        Name = x.SoilState.Category.Name
+                    },
+                    IndexBGKP = x.SoilState.IndexBGKP,
+                    PHValue = x.SoilState.PHValue
+                },
+                WaterState = new WaterStateModel()
+                {
+                    Id = x.WaterState.Id,
+                    TDSValue = x.WaterState.TDSValue,
+                    Description = x.WaterState.Description
+                },
+                Region = new RegionModel()
+                {
+                    Id = x.Region.Id,
+                    Name = x.Region.Name,
+                    Description = x.Region.Description
+                },
+                Temperature = x.Temperature,
+                User = new UserModel()
+                {
+                    Id = x.User.Id,
+                    Email = x.User.Email,
+                    FirstName = x.User.FirstName,
+                    LastName = x.User.LastName,
+                    MiddleName = x.User.MiddleName,
+                    Phone = x.User.Phone
+                }
+            });
 
             return Ok(points);
         }
@@ -25,7 +79,61 @@ namespace EcologyMapApi.Controllers
         public IHttpActionResult GetAppropriate(double longitude, double latitude)
         {
             var points = _ent.Point.Where(x => x.Longitude == longitude
-            && x.Latitude == latitude).ToList().ConvertAll(x => new PointModel(x));
+            && x.Latitude == latitude).Select(x => new PointModel()
+            {
+                Id = x.Id,
+                Latitude = x.Latitude,
+                Longitude = x.Longitude,
+                AirState = new AirStateModel()
+                {
+                    Id = x.AirState.Id,
+                    CO2Value = x.AirState.CO2Value,
+                    Dust = x.AirState.Dust,
+                    NO2Value = x.AirState.NO2Value
+                },
+                Geosmile = new GeosmileModel()
+                {
+                    Id = x.Geosmile.Id,
+                    Image = x.Geosmile.Image,
+                    Name = x.Geosmile.Name,
+                    TemperatureMaxValue = x.Geosmile.TemparatureMaxValue,
+                    TemperatureMinValue = x.Geosmile.TemparatureMinValue,
+                    Weather = x.Geosmile.Weather
+                },
+                SoilState = new SoilStateModel()
+                {
+                    Id = x.SoilState.Id,
+                    Category = new CategoryModel()
+                    {
+                        Id = x.SoilState.Category.Id,
+                        Name = x.SoilState.Category.Name
+                    },
+                    IndexBGKP = x.SoilState.IndexBGKP,
+                    PHValue = x.SoilState.PHValue
+                },
+                WaterState = new WaterStateModel()
+                {
+                    Id = x.WaterState.Id,
+                    TDSValue = x.WaterState.TDSValue,
+                    Description = x.WaterState.Description
+                },
+                Region = new RegionModel()
+                {
+                    Id = x.Region.Id,
+                    Name = x.Region.Name,
+                    Description = x.Region.Description
+                },
+                Temperature = x.Temperature,
+                User = new UserModel()
+                {
+                    Id = x.User.Id,
+                    Email = x.User.Email,
+                    FirstName = x.User.FirstName,
+                    LastName = x.User.LastName,
+                    MiddleName = x.User.MiddleName,
+                    Phone = x.User.Phone
+                }
+            });
 
             return Ok(points);
         }

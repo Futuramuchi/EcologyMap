@@ -1,0 +1,230 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="EcologyMapModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="EcologyMapEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="AirState" EntityType="EcologyMapModel.AirState" />
+    <EntitySet Name="Category" EntityType="EcologyMapModel.Category" />
+    <EntitySet Name="Geosmile" EntityType="EcologyMapModel.Geosmile" />
+    <EntitySet Name="Point" EntityType="EcologyMapModel.Point" />
+    <EntitySet Name="Region" EntityType="EcologyMapModel.Region" />
+    <EntitySet Name="SoilState" EntityType="EcologyMapModel.SoilState" />
+    <EntitySet Name="sysdiagrams" EntityType="EcologyMapModel.sysdiagrams" />
+    <EntitySet Name="User" EntityType="EcologyMapModel.User" />
+    <EntitySet Name="WaterState" EntityType="EcologyMapModel.WaterState" />
+    <AssociationSet Name="FK_Point_AirState" Association="EcologyMapModel.FK_Point_AirState">
+      <End Role="AirState" EntitySet="AirState" />
+      <End Role="Point" EntitySet="Point" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SoilState_Category" Association="EcologyMapModel.FK_SoilState_Category">
+      <End Role="Category" EntitySet="Category" />
+      <End Role="SoilState" EntitySet="SoilState" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Point_Geosmile" Association="EcologyMapModel.FK_Point_Geosmile">
+      <End Role="Geosmile" EntitySet="Geosmile" />
+      <End Role="Point" EntitySet="Point" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Point_Region" Association="EcologyMapModel.FK_Point_Region">
+      <End Role="Region" EntitySet="Region" />
+      <End Role="Point" EntitySet="Point" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Point_SoilState" Association="EcologyMapModel.FK_Point_SoilState">
+      <End Role="SoilState" EntitySet="SoilState" />
+      <End Role="Point" EntitySet="Point" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Point_User" Association="EcologyMapModel.FK_Point_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="Point" EntitySet="Point" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Point_WaterState" Association="EcologyMapModel.FK_Point_WaterState">
+      <End Role="WaterState" EntitySet="WaterState" />
+      <End Role="Point" EntitySet="Point" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="AirState">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CO2Value" Type="Double" />
+    <Property Name="NO2Value" Type="Double" />
+    <Property Name="Dust" Type="Double" />
+    <NavigationProperty Name="Point" Relationship="EcologyMapModel.FK_Point_AirState" FromRole="AirState" ToRole="Point" />
+  </EntityType>
+  <EntityType Name="Category">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="SoilState" Relationship="EcologyMapModel.FK_SoilState_Category" FromRole="Category" ToRole="SoilState" />
+  </EntityType>
+  <EntityType Name="Geosmile">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TemparatureMinValue" Type="Double" />
+    <Property Name="TemparatureMaxValue" Type="Double" />
+    <Property Name="Image" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="Name" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+    <Property Name="Weather" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Point" Relationship="EcologyMapModel.FK_Point_Geosmile" FromRole="Geosmile" ToRole="Point" />
+  </EntityType>
+  <EntityType Name="Point">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Longitude" Type="Double" />
+    <Property Name="Latitude" Type="Double" />
+    <Property Name="Temperature" Type="Double" />
+    <Property Name="RegionId" Type="Int32" />
+    <Property Name="UserId" Type="Int32" />
+    <Property Name="AirStateId" Type="Int32" />
+    <Property Name="SoilStateId" Type="Int32" />
+    <Property Name="WaterStateId" Type="Int32" />
+    <Property Name="GeosmileId" Type="Int32" />
+    <NavigationProperty Name="AirState" Relationship="EcologyMapModel.FK_Point_AirState" FromRole="Point" ToRole="AirState" />
+    <NavigationProperty Name="Geosmile" Relationship="EcologyMapModel.FK_Point_Geosmile" FromRole="Point" ToRole="Geosmile" />
+    <NavigationProperty Name="Region" Relationship="EcologyMapModel.FK_Point_Region" FromRole="Point" ToRole="Region" />
+    <NavigationProperty Name="SoilState" Relationship="EcologyMapModel.FK_Point_SoilState" FromRole="Point" ToRole="SoilState" />
+    <NavigationProperty Name="User" Relationship="EcologyMapModel.FK_Point_User" FromRole="Point" ToRole="User" />
+    <NavigationProperty Name="WaterState" Relationship="EcologyMapModel.FK_Point_WaterState" FromRole="Point" ToRole="WaterState" />
+  </EntityType>
+  <EntityType Name="Region">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Point" Relationship="EcologyMapModel.FK_Point_Region" FromRole="Region" ToRole="Point" />
+  </EntityType>
+  <EntityType Name="SoilState">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CategoryId" Type="Int32" />
+    <Property Name="IndexBGKP" Type="Double" />
+    <Property Name="PHValue" Type="Double" />
+    <NavigationProperty Name="Category" Relationship="EcologyMapModel.FK_SoilState_Category" FromRole="SoilState" ToRole="Category" />
+    <NavigationProperty Name="Point" Relationship="EcologyMapModel.FK_Point_SoilState" FromRole="SoilState" ToRole="Point" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MiddleName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="45" FixedLength="false" Unicode="true" />
+    <Property Name="Phone" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="Login" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="Password" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Point" Relationship="EcologyMapModel.FK_Point_User" FromRole="User" ToRole="Point" />
+  </EntityType>
+  <EntityType Name="WaterState">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TDSValue" Type="Double" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Point" Relationship="EcologyMapModel.FK_Point_WaterState" FromRole="WaterState" ToRole="Point" />
+  </EntityType>
+  <Association Name="FK_Point_AirState">
+    <End Type="EcologyMapModel.AirState" Role="AirState" Multiplicity="0..1" />
+    <End Type="EcologyMapModel.Point" Role="Point" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AirState">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Point">
+        <PropertyRef Name="AirStateId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SoilState_Category">
+    <End Type="EcologyMapModel.Category" Role="Category" Multiplicity="0..1" />
+    <End Type="EcologyMapModel.SoilState" Role="SoilState" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Category">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="SoilState">
+        <PropertyRef Name="CategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Point_Geosmile">
+    <End Type="EcologyMapModel.Geosmile" Role="Geosmile" Multiplicity="0..1" />
+    <End Type="EcologyMapModel.Point" Role="Point" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Geosmile">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Point">
+        <PropertyRef Name="GeosmileId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Point_Region">
+    <End Type="EcologyMapModel.Region" Role="Region" Multiplicity="0..1" />
+    <End Type="EcologyMapModel.Point" Role="Point" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Region">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Point">
+        <PropertyRef Name="RegionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Point_SoilState">
+    <End Type="EcologyMapModel.SoilState" Role="SoilState" Multiplicity="0..1" />
+    <End Type="EcologyMapModel.Point" Role="Point" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SoilState">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Point">
+        <PropertyRef Name="SoilStateId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Point_User">
+    <End Type="EcologyMapModel.User" Role="User" Multiplicity="0..1" />
+    <End Type="EcologyMapModel.Point" Role="Point" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Point">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Point_WaterState">
+    <End Type="EcologyMapModel.WaterState" Role="WaterState" Multiplicity="0..1" />
+    <End Type="EcologyMapModel.Point" Role="Point" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="WaterState">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Point">
+        <PropertyRef Name="WaterStateId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

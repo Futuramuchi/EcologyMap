@@ -86,3 +86,4 @@ C:\Yena\Хакатоны\EcologyMap\EcologyMapApi\EcologyMapApi\obj\Debug\Ecolog
 C:\Yena\Хакатоны\EcologyMap\EcologyMapApi\EcologyMapApi\obj\Debug\EcologyMapApi.csproj.CopyComplete
 C:\Yena\Хакатоны\EcologyMap\EcologyMapApi\EcologyMapApi\obj\Debug\EcologyMapApi.dll
 C:\Yena\Хакатоны\EcologyMap\EcologyMapApi\EcologyMapApi\obj\Debug\EcologyMapApi.pdb
+C:\Yena\Хакатоны\EcologyMap\EcologyMapApi\EcologyMapApi\obj\Debug\EcologyMapApi.csproj.AssemblyReference.cache
