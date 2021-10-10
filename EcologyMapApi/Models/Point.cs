@@ -18,7 +18,7 @@ namespace EcologyMapApi.Models
         public Nullable<double> Longitude { get; set; }
         public Nullable<double> Latitude { get; set; }
         public Nullable<double> Temperature { get; set; }
-        public Nullable<int> RegionId { get; set; }
+        public string RegionName { get; set; }
         public Nullable<int> UserId { get; set; }
         public Nullable<int> AirStateId { get; set; }
         public Nullable<int> SoilStateId { get; set; }

@@ -166,12 +166,14 @@
     <Compile Include="Controllers\GeosmilesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PointsController.cs" />
+    <Compile Include="Controllers\RandomPointsController.cs" />
     <Compile Include="Controllers\RegionsController.cs" />
     <Compile Include="Controllers\SoilStatesController.cs" />
     <Compile Include="Controllers\WaterStatesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helper\ValuesGenerator.cs" />
     <Compile Include="Models\AirState.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -179,7 +181,6 @@
     <Compile Include="Models\Category.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\CategoryModel.cs" />
     <Compile Include="Models\Geosmile.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -298,6 +299,7 @@
     <Folder Include="Views\AirStates\" />
     <Folder Include="Views\Geosmiles\" />
     <Folder Include="Views\Points\" />
+    <Folder Include="Views\RandomPoints\" />
     <Folder Include="Views\Region\" />
     <Folder Include="Views\SoilStates\" />
     <Folder Include="Views\WaterStates\" />

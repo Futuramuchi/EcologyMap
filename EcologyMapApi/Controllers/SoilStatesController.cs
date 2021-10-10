@@ -18,7 +18,6 @@ namespace EcologyMapApi.Controllers
         {
             var soilSatte = new SoilState()
             {
-                CategoryId = soilStateModel.Category.Id,
                 IndexBGKP = soilStateModel.IndexBGKP,
                 PHValue = soilStateModel.PHValue
             };

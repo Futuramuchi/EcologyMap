@@ -8,7 +8,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <TimeStampOfAssociatedLegacyPublishXmlFile />
     <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAtrkVVeZD5kOABbGCPfYyhwAAAAACAAAAAAAQZgAAAAEAACAAAAB7FlqyVKtDC45raNGMyueL66uKBERA4ikRqsQzNmAOEQAAAAAOgAAAAAIAACAAAAD+H8kkSNTnPF4PJXUhqsSZGoLcPkMh6QDw54NWE4E+EzAAAAA09SiGhcg6EpZabcYXGv1LOJJgR6MWEsFHihGx5yqFfT4KhL5LeLEPG8jrMQ3+OjJAAAAATBCdYSGDMvdr+6ECv8oL2pHPK/ChbSLNlljFsaWPJLPvUME9Ggoc2VVH1W29V0TI78hXIh9NsDqxy9ck2X3Itg==</EncryptedPassword>
     <_PublishTargetUrl>ftp://weather.makievksy.ru.com/weather.makievksy.ru.com</_PublishTargetUrl>
-    <History>True|2021-09-28T16:08:46.9734315Z;True|2021-09-17T11:35:08.9494784+03:00;True|2021-09-14T20:31:55.8263386+03:00;</History>
+    <History>True|2021-10-04T08:37:41.6758610Z;True|2021-09-28T19:08:46.9734315+03:00;True|2021-09-17T11:35:08.9494784+03:00;True|2021-09-14T20:31:55.8263386+03:00;</History>
   </PropertyGroup>
   <ItemGroup>
     <File Include="Areas/HelpPage/HelpPage.css">
@@ -81,10 +81,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/10/2013 17:29:20</publishTime>
     </File>
     <File Include="bin/EcologyMapApi.dll">
-      <publishTime>09/28/2021 19:06:41</publishTime>
+      <publishTime>10/07/2021 15:31:51</publishTime>
     </File>
     <File Include="bin/EcologyMapApi.pdb">
-      <publishTime>09/28/2021 19:06:41</publishTime>
+      <publishTime>10/07/2021 15:31:51</publishTime>
     </File>
     <File Include="bin/EntityFramework.dll">
       <publishTime>03/02/2015 09:32:26</publishTime>
@@ -330,7 +330,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/09/2021 13:06:59</publishTime>
     </File>
     <File Include="Models/Model1.edmx.diagram">
-      <publishTime>09/09/2021 17:02:54</publishTime>
+      <publishTime>10/07/2021 12:04:59</publishTime>
     </File>
     <File Include="Scripts/bootstrap.js">
       <publishTime>09/09/2021 13:07:04</publishTime>

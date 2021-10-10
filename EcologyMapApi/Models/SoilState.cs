@@ -21,11 +21,9 @@ namespace EcologyMapApi.Models
         }
     
         public int Id { get; set; }
-        public Nullable<int> CategoryId { get; set; }
         public Nullable<double> IndexBGKP { get; set; }
         public Nullable<double> PHValue { get; set; }
     
-        public virtual Category Category { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Point> Point { get; set; }
     }

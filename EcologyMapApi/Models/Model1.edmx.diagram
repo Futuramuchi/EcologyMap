@@ -5,17 +5,16 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="b39fa637106049e5886222f0ac685a3a" Name="Diagram1">
-        <EntityTypeShape EntityType="EcologyMapModel.AirState" Width="1.5" PointX="3" PointY="8.125" />
-        <EntityTypeShape EntityType="EcologyMapModel.Category" Width="1.5" PointX="0.75" PointY="2.25" />
-        <EntityTypeShape EntityType="EcologyMapModel.Geosmile" Width="1.5" PointX="3" PointY="14.375" />
-        <EntityTypeShape EntityType="EcologyMapModel.Point" Width="1.5" PointX="5.25" PointY="1" />
-        <EntityTypeShape EntityType="EcologyMapModel.Region" Width="1.5" PointX="3" PointY="5.625" />
-        <EntityTypeShape EntityType="EcologyMapModel.SoilState" Width="1.5" PointX="3" PointY="2" />
-        <EntityTypeShape EntityType="EcologyMapModel.sysdiagrams" Width="1.5" PointX="5.75" PointY="6.75" />
-        <EntityTypeShape EntityType="EcologyMapModel.User" Width="1.5" PointX="3" PointY="10.875" />
-        <EntityTypeShape EntityType="EcologyMapModel.WaterState" Width="1.5" PointX="3" PointY="17.5" />
+        <EntityTypeShape EntityType="EcologyMapModel.AirState" Width="1.5" PointX="0.75" PointY="2.125" />
+        <EntityTypeShape EntityType="EcologyMapModel.Category" Width="1.5" PointX="5.75" PointY="0.75" />
+        <EntityTypeShape EntityType="EcologyMapModel.Geosmile" Width="1.5" PointX="0.75" PointY="6.25" />
+        <EntityTypeShape EntityType="EcologyMapModel.Point" Width="1.5" PointX="3" PointY="1" />
+        <EntityTypeShape EntityType="EcologyMapModel.Region" Width="1.5" PointX="0.75" PointY="11.875" />
+        <EntityTypeShape EntityType="EcologyMapModel.SoilState" Width="1.5" PointX="0.75" PointY="9.25" />
+        <EntityTypeShape EntityType="EcologyMapModel.sysdiagrams" Width="1.5" PointX="5.75" PointY="3.75" />
+        <EntityTypeShape EntityType="EcologyMapModel.User" Width="1.5" PointX="0.75" PointY="14.375" />
+        <EntityTypeShape EntityType="EcologyMapModel.WaterState" Width="1.5" PointX="0.75" PointY="17.875" />
         <AssociationConnector Association="EcologyMapModel.FK_Point_AirState" />
-        <AssociationConnector Association="EcologyMapModel.FK_SoilState_Category" />
         <AssociationConnector Association="EcologyMapModel.FK_Point_Geosmile" />
         <AssociationConnector Association="EcologyMapModel.FK_Point_Region" />
         <AssociationConnector Association="EcologyMapModel.FK_Point_SoilState" />

@@ -18,5 +18,12 @@ namespace EcologyMapApi.Models
         public SoilStateModel SoilState { get; set; }
         public AirStateModel AirState { get; set; }
         public GeosmileModel Geosmile { get; set; }
+        public double CommonState { get; set; }
+        public double CommonSoilState { get; set; }
+        public string CommonSoilColor { get; set; }
+        public double CommonWaterState { get; set; }
+        public string CommonWaterColor { get; set; }
+        public double CommonAirState { get; set; }
+        public string CommonAirColor { get; set; }
     }
 }

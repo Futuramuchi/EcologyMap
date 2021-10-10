@@ -20,9 +20,9 @@ namespace EcologyMapApi.Controllers
         {
             var regions = await _ent.Region.Select(x => new RegionModel()
             {
-                Id = x.Id,
                 Name = x.Name,
-                Description = x.Description
+                Description = x.Description,
+                Coordinates = x.Coordinates
             }).ToListAsync();
 
 

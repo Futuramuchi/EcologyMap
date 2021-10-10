@@ -40,7 +40,7 @@
           <Property Name="Longitude" Type="float" />
           <Property Name="Latitude" Type="float" />
           <Property Name="Temperature" Type="float" />
-          <Property Name="RegionId" Type="int" />
+          <Property Name="RegionName" Type="nvarchar" MaxLength="200" />
           <Property Name="UserId" Type="int" />
           <Property Name="AirStateId" Type="int" />
           <Property Name="SoilStateId" Type="int" />
@@ -49,18 +49,17 @@
         </EntityType>
         <EntityType Name="Region">
           <Key>
-            <PropertyRef Name="Id" />
+            <PropertyRef Name="Name" />
           </Key>
-          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Name" Type="nvarchar" MaxLength="200" />
+          <Property Name="Name" Type="nvarchar" MaxLength="200" Nullable="false" />
           <Property Name="Description" Type="nvarchar(max)" />
+          <Property Name="Coordinates" Type="nvarchar(max)" />
         </EntityType>
         <EntityType Name="SoilState">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="CategoryId" Type="int" />
           <Property Name="IndexBGKP" Type="float" />
           <Property Name="PHValue" Type="float" />
         </EntityType>
@@ -124,10 +123,10 @@
           <End Role="Point" Type="Self.Point" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Region">
-              <PropertyRef Name="Id" />
+              <PropertyRef Name="Name" />
             </Principal>
             <Dependent Role="Point">
-              <PropertyRef Name="RegionId" />
+              <PropertyRef Name="RegionName" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -167,18 +166,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_SoilState_Category">
-          <End Role="Category" Type="Self.Category" Multiplicity="0..1" />
-          <End Role="SoilState" Type="Self.SoilState" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Category">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="SoilState">
-              <PropertyRef Name="CategoryId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityContainer Name="EcologyMapModelStoreContainer">
           <EntitySet Name="AirState" EntityType="Self.AirState" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Category" EntityType="Self.Category" Schema="dbo" store:Type="Tables" />
@@ -213,10 +200,6 @@
             <End Role="WaterState" EntitySet="WaterState" />
             <End Role="Point" EntitySet="Point" />
           </AssociationSet>
-          <AssociationSet Name="FK_SoilState_Category" Association="Self.FK_SoilState_Category">
-            <End Role="Category" EntitySet="Category" />
-            <End Role="SoilState" EntitySet="SoilState" />
-          </AssociationSet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
@@ -235,10 +218,6 @@
           <AssociationSet Name="FK_Point_AirState" Association="EcologyMapModel.FK_Point_AirState">
             <End Role="AirState" EntitySet="AirState" />
             <End Role="Point" EntitySet="Point" />
-          </AssociationSet>
-          <AssociationSet Name="FK_SoilState_Category" Association="EcologyMapModel.FK_SoilState_Category">
-            <End Role="Category" EntitySet="Category" />
-            <End Role="SoilState" EntitySet="SoilState" />
           </AssociationSet>
           <AssociationSet Name="FK_Point_Geosmile" Association="EcologyMapModel.FK_Point_Geosmile">
             <End Role="Geosmile" EntitySet="Geosmile" />
@@ -277,7 +256,6 @@
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Name" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="SoilState" Relationship="EcologyMapModel.FK_SoilState_Category" FromRole="Category" ToRole="SoilState" />
         </EntityType>
         <EntityType Name="Geosmile">
           <Key>
@@ -299,7 +277,7 @@
           <Property Name="Longitude" Type="Double" />
           <Property Name="Latitude" Type="Double" />
           <Property Name="Temperature" Type="Double" />
-          <Property Name="RegionId" Type="Int32" />
+          <Property Name="RegionName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
           <Property Name="UserId" Type="Int32" />
           <Property Name="AirStateId" Type="Int32" />
           <Property Name="SoilStateId" Type="Int32" />
@@ -314,11 +292,11 @@
         </EntityType>
         <EntityType Name="Region">
           <Key>
-            <PropertyRef Name="Id" />
+            <PropertyRef Name="Name" />
           </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Name" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
           <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Coordinates" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Point" Relationship="EcologyMapModel.FK_Point_Region" FromRole="Region" ToRole="Point" />
         </EntityType>
         <EntityType Name="SoilState">
@@ -326,10 +304,8 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="CategoryId" Type="Int32" />
           <Property Name="IndexBGKP" Type="Double" />
           <Property Name="PHValue" Type="Double" />
-          <NavigationProperty Name="Category" Relationship="EcologyMapModel.FK_SoilState_Category" FromRole="SoilState" ToRole="Category" />
           <NavigationProperty Name="Point" Relationship="EcologyMapModel.FK_Point_SoilState" FromRole="SoilState" ToRole="Point" />
         </EntityType>
         <EntityType Name="sysdiagrams">
@@ -377,18 +353,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_SoilState_Category">
-          <End Type="EcologyMapModel.Category" Role="Category" Multiplicity="0..1" />
-          <End Type="EcologyMapModel.SoilState" Role="SoilState" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Category">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="SoilState">
-              <PropertyRef Name="CategoryId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_Point_Geosmile">
           <End Type="EcologyMapModel.Geosmile" Role="Geosmile" Multiplicity="0..1" />
           <End Type="EcologyMapModel.Point" Role="Point" Multiplicity="*" />
@@ -406,10 +370,10 @@
           <End Type="EcologyMapModel.Point" Role="Point" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Region">
-              <PropertyRef Name="Id" />
+              <PropertyRef Name="Name" />
             </Principal>
             <Dependent Role="Point">
-              <PropertyRef Name="RegionId" />
+              <PropertyRef Name="RegionName" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -449,7 +413,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-      </Schema>
+        </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
@@ -493,7 +457,7 @@
                 <ScalarProperty Name="SoilStateId" ColumnName="SoilStateId" />
                 <ScalarProperty Name="AirStateId" ColumnName="AirStateId" />
                 <ScalarProperty Name="UserId" ColumnName="UserId" />
-                <ScalarProperty Name="RegionId" ColumnName="RegionId" />
+                <ScalarProperty Name="RegionName" ColumnName="RegionName" />
                 <ScalarProperty Name="Temperature" ColumnName="Temperature" />
                 <ScalarProperty Name="Latitude" ColumnName="Latitude" />
                 <ScalarProperty Name="Longitude" ColumnName="Longitude" />
@@ -504,9 +468,9 @@
           <EntitySetMapping Name="Region">
             <EntityTypeMapping TypeName="EcologyMapModel.Region">
               <MappingFragment StoreEntitySet="Region">
+                <ScalarProperty Name="Coordinates" ColumnName="Coordinates" />
                 <ScalarProperty Name="Description" ColumnName="Description" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -515,7 +479,6 @@
               <MappingFragment StoreEntitySet="SoilState">
                 <ScalarProperty Name="PHValue" ColumnName="PHValue" />
                 <ScalarProperty Name="IndexBGKP" ColumnName="IndexBGKP" />
-                <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>

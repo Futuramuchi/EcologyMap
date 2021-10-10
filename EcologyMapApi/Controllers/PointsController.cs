@@ -1,4 +1,5 @@
-﻿using EcologyMapApi.Models;
+﻿using EcologyMapApi.Helper;
+using EcologyMapApi.Models;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -14,9 +15,75 @@ namespace EcologyMapApi.Controllers
     public class PointsController : ApiController
     {
         private EcologyMapEntities _ent { get; set; } = new EcologyMapEntities();
-
+        private string _soilState { get; set; }
+        private double _commonSoilState { get; set; }
         public IHttpActionResult GetAll()
         {
+            //foreach (var status in _ent.Point)
+            //{
+            //    if (status.SoilState.IndexBGKP != null)
+            //    {
+            //        _commonSoilState = ((double)status.SoilState.IndexBGKP * 100) / 1000;
+            //        if (status.SoilState.IndexBGKP <= 10 && status.SoilState.IndexBGKP > 0)
+            //        {
+            //            _soilState = "чистая";
+            //            _commonSoilState = ((double)status.SoilState.IndexBGKP * 100) / 1000;
+            //        }
+            //        if (status.SoilState.IndexBGKP > 10 && status.SoilState.IndexBGKP <= 100)
+            //        {
+            //            _soilState = "умеренно чистая";
+            //        }
+            //        if (status.SoilState.IndexBGKP > 100 && status.SoilState.IndexBGKP <= 1000)
+            //        {
+            //            _soilState = "опасная";
+            //        }
+            //        if (status.SoilState.IndexBGKP > 1000)
+            //        {
+            //            _soilState = "чрезвычайно опасная";
+            //        }
+            //    }
+
+
+            //}
+            //var pointModel = _ent.Point.ToList();
+            //for (int i = 0; i < pointModel.Count; i++)
+            //{
+            //    var points = new PointModel()
+            //    {
+            //        Id = pointModel[i].Id,
+            //        Latitude = pointModel[i].Latitude,
+            //        Longitude = pointModel[i].Longitude,
+            //        AirState = new AirStateModel()
+            //        {
+            //            Id = pointModel[i].AirState.Id,
+            //            CO2Value = pointModel[i].AirState.CO2Value,
+            //            NO2Value = pointModel[i].AirState.NO2Value
+            //        },
+            //        SoilState = new SoilStateModel()
+            //        {
+            //            Id = pointModel[i].SoilState.Id,
+            //            IndexBGKP = pointModel[i].SoilState.IndexBGKP,
+            //            PHValue = pointModel[i].SoilState.PHValue
+            //        },
+            //        WaterState = new WaterStateModel()
+            //        {
+            //            Id = pointModel[i].WaterState.Id,
+            //            TDSValue = pointModel[i].WaterState.TDSValue
+            //        },
+            //        Region = new RegionModel()
+            //        {
+            //            Coordinates = pointModel[i].Region.Coordinates
+            //        },
+            //        Geosmile = new GeosmileModel()
+            //        {
+            //            Id = pointModel[i].Geosmile.Id,
+            //            Image = pointModel[i].Geosmile.Image,
+            //            Name = pointModel[i].Geosmile.Name,
+            //            Weather = pointModel[i].Geosmile.Weather
+            //        }
+            //    };
+            //}
+
             var points = _ent.Point.Select(x => new PointModel()
             {
                 Id = x.Id,
@@ -41,11 +108,6 @@ namespace EcologyMapApi.Controllers
                 SoilState = new SoilStateModel()
                 {
                     Id = x.SoilState.Id,
-                    Category = new CategoryModel()
-                    {
-                        Id = x.SoilState.Category.Id,
-                        Name = x.SoilState.Category.Name
-                    },
                     IndexBGKP = x.SoilState.IndexBGKP,
                     PHValue = x.SoilState.PHValue
                 },
@@ -57,9 +119,9 @@ namespace EcologyMapApi.Controllers
                 },
                 Region = new RegionModel()
                 {
-                    Id = x.Region.Id,
                     Name = x.Region.Name,
-                    Description = x.Region.Description
+                    Description = x.Region.Description,
+                    Coordinates = x.Region.Coordinates
                 },
                 Temperature = x.Temperature,
                 User = new UserModel()
@@ -71,7 +133,7 @@ namespace EcologyMapApi.Controllers
                     MiddleName = x.User.MiddleName,
                     Phone = x.User.Phone
                 }
-            });
+            }).ToList();
 
             return Ok(points);
         }
@@ -103,11 +165,6 @@ namespace EcologyMapApi.Controllers
                 SoilState = new SoilStateModel()
                 {
                     Id = x.SoilState.Id,
-                    Category = new CategoryModel()
-                    {
-                        Id = x.SoilState.Category.Id,
-                        Name = x.SoilState.Category.Name
-                    },
                     IndexBGKP = x.SoilState.IndexBGKP,
                     PHValue = x.SoilState.PHValue
                 },
@@ -119,9 +176,9 @@ namespace EcologyMapApi.Controllers
                 },
                 Region = new RegionModel()
                 {
-                    Id = x.Region.Id,
                     Name = x.Region.Name,
-                    Description = x.Region.Description
+                    Description = x.Region.Description,
+                    Coordinates = x.Region.Coordinates
                 },
                 Temperature = x.Temperature,
                 User = new UserModel()
@@ -138,6 +195,8 @@ namespace EcologyMapApi.Controllers
             return Ok(points);
         }
 
+
+
         public async Task<HttpResponseMessage> Post([FromBody] PointModel pointModel)
         {
             var point = new Point()
@@ -149,7 +208,7 @@ namespace EcologyMapApi.Controllers
                 GeosmileId = pointModel.Geosmile.Id,
                 Latitude = pointModel.Latitude,
                 Longitude = pointModel.Longitude,
-                RegionId = pointModel.Region.Id,
+                RegionName = pointModel.Region.Name,
                 UserId = pointModel.User.Id
             };
 

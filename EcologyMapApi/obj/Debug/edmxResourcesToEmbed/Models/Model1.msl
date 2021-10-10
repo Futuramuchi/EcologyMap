@@ -39,7 +39,7 @@
           <ScalarProperty Name="SoilStateId" ColumnName="SoilStateId" />
           <ScalarProperty Name="AirStateId" ColumnName="AirStateId" />
           <ScalarProperty Name="UserId" ColumnName="UserId" />
-          <ScalarProperty Name="RegionId" ColumnName="RegionId" />
+          <ScalarProperty Name="RegionName" ColumnName="RegionName" />
           <ScalarProperty Name="Temperature" ColumnName="Temperature" />
           <ScalarProperty Name="Latitude" ColumnName="Latitude" />
           <ScalarProperty Name="Longitude" ColumnName="Longitude" />
@@ -50,9 +50,9 @@
     <EntitySetMapping Name="Region">
       <EntityTypeMapping TypeName="EcologyMapModel.Region">
         <MappingFragment StoreEntitySet="Region">
+          <ScalarProperty Name="Coordinates" ColumnName="Coordinates" />
           <ScalarProperty Name="Description" ColumnName="Description" />
           <ScalarProperty Name="Name" ColumnName="Name" />
-          <ScalarProperty Name="Id" ColumnName="Id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -61,7 +61,6 @@
         <MappingFragment StoreEntitySet="SoilState">
           <ScalarProperty Name="PHValue" ColumnName="PHValue" />
           <ScalarProperty Name="IndexBGKP" ColumnName="IndexBGKP" />
-          <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
           <ScalarProperty Name="Id" ColumnName="Id" />
         </MappingFragment>
       </EntityTypeMapping>
