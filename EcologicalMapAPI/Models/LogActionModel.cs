@@ -11,6 +11,6 @@ namespace EcologicalMapAPI.Models
         public UserModel User { get; set; }
         public string Description { get; set; }
         public DateTime DateTimeEvent { get; set; }
-        public StationDataModel DtationData { get; set; }
+        public StationDataModel StationData { get; set; }
     }
 }

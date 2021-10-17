@@ -1,0 +1,209 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="EcologicalMapModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="EcologicalMapEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="AirState" EntityType="EcologicalMapModel.AirState" />
+    <EntitySet Name="Geosmile" EntityType="EcologicalMapModel.Geosmile" />
+    <EntitySet Name="LogAction" EntityType="EcologicalMapModel.LogAction" />
+    <EntitySet Name="Station" EntityType="EcologicalMapModel.Station" />
+    <EntitySet Name="StationData" EntityType="EcologicalMapModel.StationData" />
+    <EntitySet Name="sysdiagrams" EntityType="EcologicalMapModel.sysdiagrams" />
+    <EntitySet Name="User" EntityType="EcologicalMapModel.User" />
+    <EntitySet Name="UserData" EntityType="EcologicalMapModel.UserData" />
+    <AssociationSet Name="FK_UserData_AirState" Association="EcologicalMapModel.FK_UserData_AirState">
+      <End Role="AirState" EntitySet="AirState" />
+      <End Role="UserData" EntitySet="UserData" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserData_Geosmile" Association="EcologicalMapModel.FK_UserData_Geosmile">
+      <End Role="Geosmile" EntitySet="Geosmile" />
+      <End Role="UserData" EntitySet="UserData" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LogAction_StationData" Association="EcologicalMapModel.FK_LogAction_StationData">
+      <End Role="StationData" EntitySet="StationData" />
+      <End Role="LogAction" EntitySet="LogAction" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LogAction_User" Association="EcologicalMapModel.FK_LogAction_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="LogAction" EntitySet="LogAction" />
+    </AssociationSet>
+    <AssociationSet Name="FK_StationData_Station" Association="EcologicalMapModel.FK_StationData_Station">
+      <End Role="Station" EntitySet="Station" />
+      <End Role="StationData" EntitySet="StationData" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserData_User" Association="EcologicalMapModel.FK_UserData_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="UserData" EntitySet="UserData" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="AirState">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="COValue" Type="Double" />
+    <Property Name="NO2Value" Type="Double" />
+    <NavigationProperty Name="UserData" Relationship="EcologicalMapModel.FK_UserData_AirState" FromRole="AirState" ToRole="UserData" />
+  </EntityType>
+  <EntityType Name="Geosmile">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Description" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="UserData" Relationship="EcologicalMapModel.FK_UserData_Geosmile" FromRole="Geosmile" ToRole="UserData" />
+  </EntityType>
+  <EntityType Name="LogAction">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="Int32" />
+    <Property Name="StationDataId" Type="Int32" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="DateTimeEvent" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="StationData" Relationship="EcologicalMapModel.FK_LogAction_StationData" FromRole="LogAction" ToRole="StationData" />
+    <NavigationProperty Name="User" Relationship="EcologicalMapModel.FK_LogAction_User" FromRole="LogAction" ToRole="User" />
+  </EntityType>
+  <EntityType Name="Station">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Latitude" Type="Double" Nullable="false" />
+    <Property Name="Longitude" Type="Double" Nullable="false" />
+    <NavigationProperty Name="StationData" Relationship="EcologicalMapModel.FK_StationData_Station" FromRole="Station" ToRole="StationData" />
+  </EntityType>
+  <EntityType Name="StationData">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="StationId" Type="Int32" Nullable="false" />
+    <Property Name="DateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="COValue" Type="Double" />
+    <Property Name="NO2Value" Type="Double" />
+    <Property Name="NOValue" Type="Double" />
+    <Property Name="PM10" Type="Double" />
+    <Property Name="PM25" Type="Double" />
+    <Property Name="TValue" Type="Double" />
+    <Property Name="ModuleV" Type="Double" />
+    <Property Name="V" Type="Double" />
+    <Property Name="Pressure" Type="Double" />
+    <Property Name="Humidity" Type="Double" />
+    <Property Name="Precipitation" Type="Double" />
+    <NavigationProperty Name="LogAction" Relationship="EcologicalMapModel.FK_LogAction_StationData" FromRole="StationData" ToRole="LogAction" />
+    <NavigationProperty Name="Station" Relationship="EcologicalMapModel.FK_StationData_Station" FromRole="StationData" ToRole="Station" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FirstName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MiddleName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Login" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="Password" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="LogAction" Relationship="EcologicalMapModel.FK_LogAction_User" FromRole="User" ToRole="LogAction" />
+    <NavigationProperty Name="UserData" Relationship="EcologicalMapModel.FK_UserData_User" FromRole="User" ToRole="UserData" />
+  </EntityType>
+  <EntityType Name="UserData">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="Int32" Nullable="false" />
+    <Property Name="GeosmileId" Type="Int32" Nullable="false" />
+    <Property Name="Latitude" Type="Double" />
+    <Property Name="Longitude" Type="Double" />
+    <Property Name="AirStateId" Type="Int32" />
+    <Property Name="DateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Temperature" Type="Double" />
+    <NavigationProperty Name="AirState" Relationship="EcologicalMapModel.FK_UserData_AirState" FromRole="UserData" ToRole="AirState" />
+    <NavigationProperty Name="Geosmile" Relationship="EcologicalMapModel.FK_UserData_Geosmile" FromRole="UserData" ToRole="Geosmile" />
+    <NavigationProperty Name="User" Relationship="EcologicalMapModel.FK_UserData_User" FromRole="UserData" ToRole="User" />
+  </EntityType>
+  <Association Name="FK_UserData_AirState">
+    <End Type="EcologicalMapModel.AirState" Role="AirState" Multiplicity="0..1" />
+    <End Type="EcologicalMapModel.UserData" Role="UserData" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AirState">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserData">
+        <PropertyRef Name="AirStateId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserData_Geosmile">
+    <End Type="EcologicalMapModel.Geosmile" Role="Geosmile" Multiplicity="1" />
+    <End Type="EcologicalMapModel.UserData" Role="UserData" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Geosmile">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserData">
+        <PropertyRef Name="GeosmileId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LogAction_StationData">
+    <End Type="EcologicalMapModel.StationData" Role="StationData" Multiplicity="0..1" />
+    <End Type="EcologicalMapModel.LogAction" Role="LogAction" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="StationData">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="LogAction">
+        <PropertyRef Name="StationDataId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LogAction_User">
+    <End Type="EcologicalMapModel.User" Role="User" Multiplicity="0..1" />
+    <End Type="EcologicalMapModel.LogAction" Role="LogAction" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="LogAction">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_StationData_Station">
+    <End Type="EcologicalMapModel.Station" Role="Station" Multiplicity="1" />
+    <End Type="EcologicalMapModel.StationData" Role="StationData" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Station">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="StationData">
+        <PropertyRef Name="StationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserData_User">
+    <End Type="EcologicalMapModel.User" Role="User" Multiplicity="1" />
+    <End Type="EcologicalMapModel.UserData" Role="UserData" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserData">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>
