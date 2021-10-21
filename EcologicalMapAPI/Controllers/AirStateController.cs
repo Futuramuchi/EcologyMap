@@ -14,7 +14,6 @@ namespace EcologicalMapAPI.Controllers
     {
         private EcologicalMapEntities _ent { get; set; } = new EcologicalMapEntities();
 
-
         public async Task<HttpResponseMessage> Post([FromBody] AirStateModel airStateModel)
         {
             try

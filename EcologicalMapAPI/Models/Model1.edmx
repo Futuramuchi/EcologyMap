@@ -86,12 +86,21 @@
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="UserId" Type="int" Nullable="false" />
-          <Property Name="GeosmileId" Type="int" Nullable="false" />
           <Property Name="Latitude" Type="float" />
           <Property Name="Longitude" Type="float" />
           <Property Name="AirStateId" Type="int" />
           <Property Name="DateTime" Type="datetime" Nullable="false" />
           <Property Name="Temperature" Type="float" />
+        </EntityType>
+        <EntityType Name="UserGeosmile">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserId" Type="int" />
+          <Property Name="GeosmileId" Type="int" Nullable="false" />
+          <Property Name="Longitude" Type="float" Nullable="false" />
+          <Property Name="Latitude" Type="float" Nullable="false" />
         </EntityType>
         <Association Name="FK_LogAction_StationData">
           <End Role="StationData" Type="Self.StationData" Multiplicity="0..1" />
@@ -141,18 +150,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_UserData_Geosmile">
-          <End Role="Geosmile" Type="Self.Geosmile" Multiplicity="1" />
-          <End Role="UserData" Type="Self.UserData" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Geosmile">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="UserData">
-              <PropertyRef Name="GeosmileId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_UserData_User">
           <End Role="User" Type="Self.User" Multiplicity="1" />
           <End Role="UserData" Type="Self.UserData" Multiplicity="*" />
@@ -161,6 +158,30 @@
               <PropertyRef Name="Id" />
             </Principal>
             <Dependent Role="UserData">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserGeosmile_Geosmile">
+          <End Role="Geosmile" Type="Self.Geosmile" Multiplicity="1" />
+          <End Role="UserGeosmile" Type="Self.UserGeosmile" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Geosmile">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UserGeosmile">
+              <PropertyRef Name="GeosmileId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserGeosmile_UserData">
+          <End Role="UserData" Type="Self.UserData" Multiplicity="0..1" />
+          <End Role="UserGeosmile" Type="Self.UserGeosmile" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserData">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UserGeosmile">
               <PropertyRef Name="UserId" />
             </Dependent>
           </ReferentialConstraint>
@@ -174,6 +195,7 @@
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="UserData" EntityType="Self.UserData" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UserGeosmile" EntityType="Self.UserGeosmile" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_LogAction_StationData" Association="Self.FK_LogAction_StationData">
             <End Role="StationData" EntitySet="StationData" />
             <End Role="LogAction" EntitySet="LogAction" />
@@ -190,13 +212,17 @@
             <End Role="AirState" EntitySet="AirState" />
             <End Role="UserData" EntitySet="UserData" />
           </AssociationSet>
-          <AssociationSet Name="FK_UserData_Geosmile" Association="Self.FK_UserData_Geosmile">
-            <End Role="Geosmile" EntitySet="Geosmile" />
-            <End Role="UserData" EntitySet="UserData" />
-          </AssociationSet>
           <AssociationSet Name="FK_UserData_User" Association="Self.FK_UserData_User">
             <End Role="User" EntitySet="User" />
             <End Role="UserData" EntitySet="UserData" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserGeosmile_Geosmile" Association="Self.FK_UserGeosmile_Geosmile">
+            <End Role="Geosmile" EntitySet="Geosmile" />
+            <End Role="UserGeosmile" EntitySet="UserGeosmile" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserGeosmile_UserData" Association="Self.FK_UserGeosmile_UserData">
+            <End Role="UserData" EntitySet="UserData" />
+            <End Role="UserGeosmile" EntitySet="UserGeosmile" />
           </AssociationSet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
@@ -212,13 +238,14 @@
           <EntitySet Name="sysdiagrams" EntityType="EcologicalMapModel.sysdiagrams" />
           <EntitySet Name="User" EntityType="EcologicalMapModel.User" />
           <EntitySet Name="UserData" EntityType="EcologicalMapModel.UserData" />
+          <EntitySet Name="UserGeosmile" EntityType="EcologicalMapModel.UserGeosmile" />
           <AssociationSet Name="FK_UserData_AirState" Association="EcologicalMapModel.FK_UserData_AirState">
             <End Role="AirState" EntitySet="AirState" />
             <End Role="UserData" EntitySet="UserData" />
           </AssociationSet>
-          <AssociationSet Name="FK_UserData_Geosmile" Association="EcologicalMapModel.FK_UserData_Geosmile">
+          <AssociationSet Name="FK_UserGeosmile_Geosmile" Association="EcologicalMapModel.FK_UserGeosmile_Geosmile">
             <End Role="Geosmile" EntitySet="Geosmile" />
-            <End Role="UserData" EntitySet="UserData" />
+            <End Role="UserGeosmile" EntitySet="UserGeosmile" />
           </AssociationSet>
           <AssociationSet Name="FK_LogAction_StationData" Association="EcologicalMapModel.FK_LogAction_StationData">
             <End Role="StationData" EntitySet="StationData" />
@@ -236,6 +263,10 @@
             <End Role="User" EntitySet="User" />
             <End Role="UserData" EntitySet="UserData" />
           </AssociationSet>
+          <AssociationSet Name="FK_UserGeosmile_UserData" Association="EcologicalMapModel.FK_UserGeosmile_UserData">
+            <End Role="UserData" EntitySet="UserData" />
+            <End Role="UserGeosmile" EntitySet="UserGeosmile" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="AirState">
           <Key>
@@ -252,7 +283,7 @@
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Description" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="UserData" Relationship="EcologicalMapModel.FK_UserData_Geosmile" FromRole="Geosmile" ToRole="UserData" />
+          <NavigationProperty Name="UserGeosmile" Relationship="EcologicalMapModel.FK_UserGeosmile_Geosmile" FromRole="Geosmile" ToRole="UserGeosmile" />
         </EntityType>
         <EntityType Name="LogAction">
           <Key>
@@ -327,15 +358,26 @@
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="UserId" Type="Int32" Nullable="false" />
-          <Property Name="GeosmileId" Type="Int32" Nullable="false" />
           <Property Name="Latitude" Type="Double" />
           <Property Name="Longitude" Type="Double" />
           <Property Name="AirStateId" Type="Int32" />
           <Property Name="DateTime" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="Temperature" Type="Double" />
           <NavigationProperty Name="AirState" Relationship="EcologicalMapModel.FK_UserData_AirState" FromRole="UserData" ToRole="AirState" />
-          <NavigationProperty Name="Geosmile" Relationship="EcologicalMapModel.FK_UserData_Geosmile" FromRole="UserData" ToRole="Geosmile" />
           <NavigationProperty Name="User" Relationship="EcologicalMapModel.FK_UserData_User" FromRole="UserData" ToRole="User" />
+          <NavigationProperty Name="UserGeosmile" Relationship="EcologicalMapModel.FK_UserGeosmile_UserData" FromRole="UserData" ToRole="UserGeosmile" />
+        </EntityType>
+        <EntityType Name="UserGeosmile">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserId" Type="Int32" />
+          <Property Name="GeosmileId" Type="Int32" Nullable="false" />
+          <Property Name="Longitude" Type="Double" Nullable="false" />
+          <Property Name="Latitude" Type="Double" Nullable="false" />
+          <NavigationProperty Name="Geosmile" Relationship="EcologicalMapModel.FK_UserGeosmile_Geosmile" FromRole="UserGeosmile" ToRole="Geosmile" />
+          <NavigationProperty Name="UserData" Relationship="EcologicalMapModel.FK_UserGeosmile_UserData" FromRole="UserGeosmile" ToRole="UserData" />
         </EntityType>
         <Association Name="FK_UserData_AirState">
           <End Type="EcologicalMapModel.AirState" Role="AirState" Multiplicity="0..1" />
@@ -349,14 +391,14 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_UserData_Geosmile">
+        <Association Name="FK_UserGeosmile_Geosmile">
           <End Type="EcologicalMapModel.Geosmile" Role="Geosmile" Multiplicity="1" />
-          <End Type="EcologicalMapModel.UserData" Role="UserData" Multiplicity="*" />
+          <End Type="EcologicalMapModel.UserGeosmile" Role="UserGeosmile" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Geosmile">
               <PropertyRef Name="Id" />
             </Principal>
-            <Dependent Role="UserData">
+            <Dependent Role="UserGeosmile">
               <PropertyRef Name="GeosmileId" />
             </Dependent>
           </ReferentialConstraint>
@@ -409,7 +451,19 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-      </Schema>
+        <Association Name="FK_UserGeosmile_UserData">
+          <End Type="EcologicalMapModel.UserData" Role="UserData" Multiplicity="0..1" />
+          <End Type="EcologicalMapModel.UserGeosmile" Role="UserGeosmile" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserData">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UserGeosmile">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
@@ -505,6 +559,16 @@
                 <ScalarProperty Name="AirStateId" ColumnName="AirStateId" />
                 <ScalarProperty Name="Longitude" ColumnName="Longitude" />
                 <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserGeosmile">
+            <EntityTypeMapping TypeName="EcologicalMapModel.UserGeosmile">
+              <MappingFragment StoreEntitySet="UserGeosmile">
+                <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+                <ScalarProperty Name="Longitude" ColumnName="Longitude" />
                 <ScalarProperty Name="GeosmileId" ColumnName="GeosmileId" />
                 <ScalarProperty Name="UserId" ColumnName="UserId" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
