@@ -15,24 +15,24 @@ namespace EcologicalMapAPI.Models
 using System;
     using System.Collections.Generic;
     
-public partial class LogAction
+public partial class UserGeosmile
 {
 
     public int Id { get; set; }
 
     public Nullable<int> UserId { get; set; }
 
-    public Nullable<int> StationDataId { get; set; }
+    public int GeosmileId { get; set; }
 
-    public string Description { get; set; }
+    public double Longitude { get; set; }
 
-    public System.DateTime DateTimeEvent { get; set; }
+    public double Latitude { get; set; }
 
 
 
-    public virtual StationData StationData { get; set; }
+    public virtual Geosmile Geosmile { get; set; }
 
-    public virtual User User { get; set; }
+    public virtual UserData UserData { get; set; }
 
 }
 

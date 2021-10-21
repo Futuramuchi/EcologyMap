@@ -81,12 +81,21 @@
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="UserId" Type="int" Nullable="false" />
-    <Property Name="GeosmileId" Type="int" Nullable="false" />
     <Property Name="Latitude" Type="float" />
     <Property Name="Longitude" Type="float" />
     <Property Name="AirStateId" Type="int" />
     <Property Name="DateTime" Type="datetime" Nullable="false" />
     <Property Name="Temperature" Type="float" />
+  </EntityType>
+  <EntityType Name="UserGeosmile">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="int" />
+    <Property Name="GeosmileId" Type="int" Nullable="false" />
+    <Property Name="Longitude" Type="float" Nullable="false" />
+    <Property Name="Latitude" Type="float" Nullable="false" />
   </EntityType>
   <Association Name="FK_LogAction_StationData">
     <End Role="StationData" Type="Self.StationData" Multiplicity="0..1" />
@@ -136,18 +145,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_UserData_Geosmile">
-    <End Role="Geosmile" Type="Self.Geosmile" Multiplicity="1" />
-    <End Role="UserData" Type="Self.UserData" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Geosmile">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="UserData">
-        <PropertyRef Name="GeosmileId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK_UserData_User">
     <End Role="User" Type="Self.User" Multiplicity="1" />
     <End Role="UserData" Type="Self.UserData" Multiplicity="*" />
@@ -156,6 +153,30 @@
         <PropertyRef Name="Id" />
       </Principal>
       <Dependent Role="UserData">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserGeosmile_Geosmile">
+    <End Role="Geosmile" Type="Self.Geosmile" Multiplicity="1" />
+    <End Role="UserGeosmile" Type="Self.UserGeosmile" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Geosmile">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserGeosmile">
+        <PropertyRef Name="GeosmileId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserGeosmile_UserData">
+    <End Role="UserData" Type="Self.UserData" Multiplicity="0..1" />
+    <End Role="UserGeosmile" Type="Self.UserGeosmile" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserData">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserGeosmile">
         <PropertyRef Name="UserId" />
       </Dependent>
     </ReferentialConstraint>
@@ -169,6 +190,7 @@
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="UserData" EntityType="Self.UserData" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserGeosmile" EntityType="Self.UserGeosmile" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="FK_LogAction_StationData" Association="Self.FK_LogAction_StationData">
       <End Role="StationData" EntitySet="StationData" />
       <End Role="LogAction" EntitySet="LogAction" />
@@ -185,13 +207,17 @@
       <End Role="AirState" EntitySet="AirState" />
       <End Role="UserData" EntitySet="UserData" />
     </AssociationSet>
-    <AssociationSet Name="FK_UserData_Geosmile" Association="Self.FK_UserData_Geosmile">
-      <End Role="Geosmile" EntitySet="Geosmile" />
-      <End Role="UserData" EntitySet="UserData" />
-    </AssociationSet>
     <AssociationSet Name="FK_UserData_User" Association="Self.FK_UserData_User">
       <End Role="User" EntitySet="User" />
       <End Role="UserData" EntitySet="UserData" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserGeosmile_Geosmile" Association="Self.FK_UserGeosmile_Geosmile">
+      <End Role="Geosmile" EntitySet="Geosmile" />
+      <End Role="UserGeosmile" EntitySet="UserGeosmile" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserGeosmile_UserData" Association="Self.FK_UserGeosmile_UserData">
+      <End Role="UserData" EntitySet="UserData" />
+      <End Role="UserGeosmile" EntitySet="UserGeosmile" />
     </AssociationSet>
   </EntityContainer>
 </Schema>

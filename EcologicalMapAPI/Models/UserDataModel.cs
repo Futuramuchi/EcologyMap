@@ -9,7 +9,6 @@ namespace EcologicalMapAPI.Models
     {
         public int Id { get; set; }
         public UserModel User { get; set; }
-        public GeosmileModel Geosmile { get; set; }
         public double? Latitude { get; set; }
         public double? Longitude { get; set; }
         public AirStateModel AirState { get; set; }

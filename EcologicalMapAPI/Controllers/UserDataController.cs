@@ -20,7 +20,6 @@ namespace EcologicalMapAPI.Controllers
             var userData = new UserData()
             {
                 UserId = (int)userDataModel.User.Id,
-                GeosmileId = userDataModel.Geosmile.Id,
                 AirStateId = PermanentData.AirStateId,
                 DateTime = DateTime.Now,
                 Latitude = userDataModel.Latitude,
@@ -30,6 +29,8 @@ namespace EcologicalMapAPI.Controllers
 
             _ent.UserData.Add(userData);
             await _ent.SaveChangesAsync();
+
+            PermanentData.UserId = userData.UserId;
 
             return Request.CreateResponse(HttpStatusCode.OK, "Данные успешно сохранены!");
         }
@@ -55,11 +56,6 @@ namespace EcologicalMapAPI.Controllers
                     Id = x.AirState.Id,
                     COValue = x.AirState.COValue,
                     NO2Value = x.AirState.NO2Value
-                },
-                Geosmile = new GeosmileModel() 
-                {
-                    Id = x.Geosmile.Id,
-                    Description = x.Geosmile.Description
                 }
             }).ToListAsync();
 
