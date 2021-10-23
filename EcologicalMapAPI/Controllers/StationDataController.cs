@@ -1,5 +1,7 @@
-﻿using System;
+﻿using EcologicalMapAPI.Models;
+using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
@@ -10,64 +12,61 @@ namespace EcologicalMapAPI.Controllers
 {
     public class StationDataController : ApiController
     {
-        public HttpResponseMessage GetCO(DateTime dateTime, int stationId, float NO2, float NO, float PM25, float T, float moduleV, float V, float pressure, float humidity, float precipitation)
+        private EcologicalMapEntities _ent { get; set; } = new EcologicalMapEntities();
+
+        public async Task<HttpResponseMessage> Get(int stationId)
         {
-            float CO = 0;
-            return Request.CreateResponse(HttpStatusCode.OK, CO);
+            var stationData = await _ent.StationData.Where(x => x.StationId == stationId).Select(x => new StationDataModel()
+            {
+                Id = x.Id,
+                Station = new StationModel() 
+                {
+                    Id = x.Station.Id,
+                    Name = x.Station.Name,
+                    Latitude = x.Station.Latitude,
+                    Longitude = x.Station.Longitude
+                },
+                COValue = x.COValue,
+                NO2Value = x.NO2Value,
+                DateTime = x.DateTime,
+                NOValue = x.NOValue,
+                Humidity = x.Humidity,
+                ModuleV = x.ModuleV,
+                PM10 = x.PM10,
+                PM25 = x.PM25,
+                Precipitation = x.Precipitation,
+                Pressure = x.Pressure,
+                TValue = x.TValue,
+                V = x.V
+            }).ToListAsync();
+
+            return Request.CreateResponse(HttpStatusCode.OK, stationData);
         }
 
-        public HttpResponseMessage GetNO2(DateTime dateTime, int stationId, float CO, float NO, float PM25, float T, float moduleV, float V, float pressure, float humidity, float precipitation)
+        public async Task<HttpResponseMessage> Post([FromBody] StationDataModel stationDataModel)
         {
-            float NO2 = 0;
-            return Request.CreateResponse(HttpStatusCode.OK, NO2);
-        }
+            var stationData = new StationData()
+            {
+                StationId = stationDataModel.Station.Id,
+                COValue = stationDataModel.COValue,
+                DateTime = DateTime.Now,
+                Humidity = stationDataModel.Humidity,
+                Precipitation = stationDataModel.Precipitation,
+                Pressure = stationDataModel.Pressure,
+                PM10 = stationDataModel.PM10,
+                PM25 = stationDataModel.PM25,
+                ModuleV = stationDataModel.ModuleV,
+                NOValue = stationDataModel.NOValue,
+                NO2Value = stationDataModel.NOValue,
+                TValue = stationDataModel.TValue,
+                V = stationDataModel.V
+            };
 
-        public HttpResponseMessage GetNO(DateTime dateTime, int stationId, float CO, float NO2, float PM25, float T, float moduleV, float V, float pressure, float humidity, float precipitation)
-        {
-            float NO = 0;
-            return Request.CreateResponse(HttpStatusCode.OK, NO);
-        }
+            _ent.StationData.Add(stationData);
+            await _ent.SaveChangesAsync();
 
-        public HttpResponseMessage GetNPM25(DateTime dateTime, int stationId, float CO, float NO, float NO2, float T, float moduleV, float V, float pressure, float humidity, float precipitation)
-        {
-            float PM25 = 0;
-            return Request.CreateResponse(HttpStatusCode.OK, PM25);
+            return Request.CreateResponse(HttpStatusCode.OK);
         }
-
-        public HttpResponseMessage GetT(DateTime dateTime, int stationId, float CO, float NO, float PM25, float NO2, float moduleV, float V, float pressure, float humidity, float precipitation)
-        {
-            float T = 0;
-            return Request.CreateResponse(HttpStatusCode.OK, T);
-        }
-
-        public HttpResponseMessage GetModuleV(DateTime dateTime, int stationId, float CO, float NO, float PM25, float T, float NO2, float V, float pressure, float humidity, float precipitation)
-        {
-            float moduleV = 0;
-            return Request.CreateResponse(HttpStatusCode.OK, moduleV);
-        }
-
-        public HttpResponseMessage GetV(DateTime dateTime, int stationId, float CO, float NO, float PM25, float T, float moduleV, float NO2, float pressure, float humidity, float precipitation)
-        {
-            float V = 0;
-            return Request.CreateResponse(HttpStatusCode.OK, V);
-        }
-
-        public HttpResponseMessage GetPressure(DateTime dateTime, int stationId, float CO, float NO, float PM25, float T, float moduleV, float V, float NO2, float humidity, float precipitation)
-        {
-            float pressure = 0;
-            return Request.CreateResponse(HttpStatusCode.OK, pressure);
-        }
-
-        public HttpResponseMessage GetHumidity(DateTime dateTime, int stationId, float CO, float NO, float PM25, float T, float moduleV, float V, float pressure, float NO2, float precipitation)
-        {
-            float humidity = 0;
-            return Request.CreateResponse(HttpStatusCode.OK, humidity);
-        }
-
-        public HttpResponseMessage GetPrecipitation(DateTime dateTime, int stationId, float CO, float NO, float PM25, float T, float moduleV, float V, float pressure, float humidity, float NO2)
-        {
-            float precipitation = 0;
-            return Request.CreateResponse(HttpStatusCode.OK, precipitation);
-        }
+      
     }
 }
