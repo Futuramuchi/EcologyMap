@@ -21,7 +21,7 @@ namespace EcologicalMapAPI.Controllers
             {
                 Id = x.Id,
                 GeosmileId = (int)x.GeosmileId,
-                UserId = x.UserId,
+                UserId = x.UserData.UserId,
                 Latitude = (double)x.Latitude,
                 Longitude = (double)x.Longitude
             }).ToListAsync();

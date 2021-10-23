@@ -30,7 +30,7 @@ namespace EcologicalMapAPI.Controllers
             _ent.UserData.Add(userData);
             await _ent.SaveChangesAsync();
 
-            PermanentData.UserId = userData.UserId;
+            PermanentData.UserId = userData.Id;
 
             return Request.CreateResponse(HttpStatusCode.OK, "Данные успешно сохранены!");
         }

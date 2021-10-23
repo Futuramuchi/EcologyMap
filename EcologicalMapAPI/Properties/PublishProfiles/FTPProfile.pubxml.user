@@ -8,7 +8,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <TimeStampOfAssociatedLegacyPublishXmlFile />
     <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA3+Hb8R1+oku9UyJtNPuckgAAAAACAAAAAAAQZgAAAAEAACAAAADeTJMt9D5fXHe6BcOZ062bsdMDTBv3I8+ce07Q4nVLzgAAAAAOgAAAAAIAACAAAAARSUWM0gXTv2Hg6UGhAt+zIYzohxP8VnluvpdrBYyeoDAAAABpXk1LZ912/XgdX0iXJ6ZdYjjCmlqPdZ+x6vQCa4pf8Bn5k+Fs1FW5gQNjM5jmCb5AAAAAAgBmIqC4jv7iUUZPZg3hG+8Dc0U5o+5lu1qLeDxbGNDrn/+lenB5+Ub5Jc5ncagkr0DNlrzSLThHS9jcfKkUOA==</EncryptedPassword>
     <_PublishTargetUrl>ftp://weather.makievksy.ru.com/weather.makievksy.ru.com</_PublishTargetUrl>
-    <History>True|2021-10-23T13:56:46.0885081Z;True|2021-10-21T21:43:58.9947155+03:00;True|2021-10-17T19:15:54.8636151+03:00;</History>
+    <History>True|2021-10-23T18:43:02.3529307Z;True|2021-10-23T16:56:46.0885081+03:00;True|2021-10-21T21:43:58.9947155+03:00;True|2021-10-17T19:15:54.8636151+03:00;</History>
   </PropertyGroup>
   <ItemGroup>
     <File Include="Areas/HelpPage/HelpPage.css">
@@ -81,10 +81,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/17/2021 18:38:27</publishTime>
     </File>
     <File Include="bin/EcologicalMapAPI.dll">
-      <publishTime>10/23/2021 16:54:24</publishTime>
+      <publishTime>10/23/2021 21:40:44</publishTime>
     </File>
     <File Include="bin/EcologicalMapAPI.pdb">
-      <publishTime>10/23/2021 16:54:24</publishTime>
+      <publishTime>10/23/2021 21:40:44</publishTime>
     </File>
     <File Include="bin/EntityFramework.dll">
       <publishTime>10/17/2021 18:38:27</publishTime>
