@@ -1,0 +1,444 @@
+body {
+  padding: 0;
+  margin: 0;
+  background: #f1f3f5;
+  font-family: 'Montserrat', sans-serif;
+}
+
+html, body, #map {
+  height: 100%;
+  font: 10pt "Helvetica Neue", Arial, Helvetica, sans-serif;
+}
+  .popupBeauty{
+	  width: 300px;
+	  height: 300px;
+  }
+
+  .maomap{
+    width: 90%;
+    height: 400px;
+    border: 0px solid;
+    margin: 20px;
+    border-radius: 15px;
+  }
+
+  .frmView{
+	height: -webkit-fill-available;
+	border:0px;
+  }
+
+  .headerAnalyz{
+    text-align: -webkit-left;
+    background: #3b6db9;
+    margin: 0px;
+    font-size: 42pt;
+    padding-left: 15px;
+    color: white;
+    text-shadow: 0px 0px 5px black;
+  }
+
+  .legend-map{
+    background: white;
+    z-index: 3;
+    padding: 15px;
+    border-radius: 18px;    
+    border-top: 18px solid #3b6db9;
+    box-shadow: 0px 0px 7px 2px #5959ad;
+    margin: 0px 0px 15px 0px;
+
+  }
+
+  .imgMapVozduha{
+    width: 100%;
+    transition: transform .2s;
+  }
+
+  .imgMapVozduha:hover{
+    transform: scale(1.4);
+    box-shadow: 0px 0px 5px rgb(53, 52, 52);
+  }
+
+  .small-kv1{
+    background: #000066;
+    width: 20px;
+    height: 20px;
+    margin: 5px;
+    display: table-cell;
+    padding: 10px;
+    color: white;
+    font-weight: 900;
+    text-shadow: 0 0 5px black;
+
+  }
+  
+  .small-kv2{
+    width: 20px;
+    height: 20px;
+    margin: 5px;
+    display: table-cell;
+    padding: 10px;
+    color: white;
+    font-weight: 900;
+    text-shadow: 0 0 5px black;
+    background: orange;
+  }
+  
+  .small-kv3{
+    width: 20px;
+    height: 20px;
+    margin: 5px;
+    display: table-cell;
+    padding: 10px;
+    color: white;
+    font-weight: 900;
+    text-shadow: 0 0 5px black;
+    background: #ff66ff;
+  }
+
+  .legend-header{
+    font-size: 13px;
+    font-family: 'Montserrat';
+  }
+
+  .linedata{
+    background: linear-gradient(to right, #000066, blue, cyan, lime, yellow, orange, orange, red, Maroon, #660066, #990099, #ff66ff);
+    width: 90%;
+    height: 15px;
+    margin: 5%;
+  }
+
+  .btntimer{
+    width: 10%;
+    height: 50px;
+    background: #f1f3f5;
+    display: inline-block;
+    margin: 10px 20px 12px 12px;
+    text-align: center;
+    transition: transform .2s;
+    z-index: 100;
+    text-decoration: none;
+    font-size: 13pt;
+    color: black;
+    font-family: 'Montserrat', sans-serif;
+  }
+  .btntimer:hover{
+    height: 60px;
+    position: relative;
+    z-index: 1010;
+    transform: scale(1.2);
+    margin: 0px 8px 0px 20px;
+    border-radius: 4px 4px 4px 4px;
+    bottom: 5px;
+    padding:2px;
+    background: #fff;
+    -webkit-box-shadow: 0 0 0 1px rgb(0 0 0 / 5%), 0 2px 6px 0 rgb(0 0 0 / 5%);
+    box-shadow: 0 0 0 1px rgb(0 0 0 / 5%), 0 2px 6px 0 rgb(0 0 0 / 5%);
+    font-weight: bold;
+    color: black;
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  .btn-second{
+    height: 60px;
+    position: relative;
+    z-index: 1010;
+    transform: scale(1.2);
+    margin: 0px 20px 0px 9px;
+    border-radius: 4px 4px 4px 4px;
+    bottom: 5px;
+    padding:2px;
+    background: #fff;
+    -webkit-box-shadow: 0 0 0 1px rgb(0 0 0 / 5%), 0 2px 6px 0 rgb(0 0 0 / 5%);
+    box-shadow: 0 0 0 1px rgb(0 0 0 / 5%), 0 2px 6px 0 rgb(0 0 0 / 5%);
+    font-size: 15pt;
+    color: black;
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  .btn-second-nonactive{
+    width: 10%;
+    height: 60px;
+    background: #f1f3f5;
+    display: inline-block;
+    margin: 0px 20px 10px 0px;
+    text-align: center;
+    transition: transform .2s;
+    z-index: 100;
+    text-decoration: none;
+    color: black;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+  }
+
+  .header-map{
+    font-size: 20pt;
+    text-shadow: 0 0 4px black;
+    font-family: system-ui;
+  }
+
+  .header-unactive{
+    color:white;
+  }
+
+  .leaflet-map-pane {
+    z-index: 2 !important;
+ }
+
+ .leaflet-google-layer {
+     z-index: 1 !important;
+ }
+.timer-panel{
+  margin-left: 10%;
+  bottom: 2%;
+  left: 0;
+  position: absolute;
+  min-width: 90%;
+}
+.info-timepanel{
+  font-size: 10pt;
+    margin-top: 10px;
+    margin-bottom: 2px;
+}
+
+.hr-shelf {
+  margin: -50px auto 10px;
+  padding: 0;
+  height: 50px;
+  border: none;
+  border-bottom: 1px solid #1f1209;
+  box-shadow: 0 20px 20px -20px #333;
+  width: 95%; 
+}
+.about{
+  font-weight: 600;
+    text-align: -webkit-right;
+}
+
+.dataForAPI{
+  float: left;
+  margin: 0px -30px 0px 0px;
+  line-height: 26px;
+}
+
+.aboutli-right{
+  text-align: right; 
+  list-style-type: none;
+}
+.aboutli-left{
+  text-align: left; 
+  list-style-type: none;
+}
+
+.visualData{
+    border: 2px solid #3b6db9;
+    border-radius: 5px;
+    padding: 3px;
+}
+
+main{
+  font-size: 24pt;
+  text-shadow: 0px 0px 20px #000000;
+  color: #ffffff;
+  line-height: 14px;
+}
+.header-data{
+  margin: 65px 0px 0px 0px;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 72px;
+    color: #3B6DB9;
+    text-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+}
+
+.info{
+  width: 80%;
+  box-shadow: 0px 0px 17px 0px #9d9d9d;
+  background: #DAE6ED;
+border-radius: 20px;
+}
+.data-double{
+  display: inline-block;
+  background: #FFFFFF;
+box-shadow: 0px 97px 90px rgba(7, 0, 59, 0.12);
+border-radius: 12px;
+width: 40%;
+min-height: 300px;
+margin: 4%;
+border-top: 12px solid #3B6DB9;
+}
+.data-weight{
+  display: inline-block;
+  background: #FFFFFF;
+box-shadow: 0px 97px 90px rgba(7, 0, 59, 0.12);
+border-radius: 12px;
+width: 88%;
+min-height: 300px;
+margin: 4%;
+border-top: 12px solid #3B6DB9;
+}
+
+footer{
+  bottom:0; 
+  left:0;
+  position: fixed;
+  width:100%;
+  height: 115px;
+  background-image: url(./images/backmap.jpg);
+  background-size: cover;
+  border-top: 1px solid #9d9d9d;
+  box-shadow: 0px 0px 7px 0px #9b9b9b;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-around;
+}
+li{
+  font-family: 'Montserrat';   
+}
+
+.liOstankino {
+  text-align: -webkit-right;
+  margin-left: 5px;
+  padding: 4px;
+}
+
+.img-ostankino{
+  z-index: 1;
+    position: fixed;
+    bottom: 0;
+    left: -50px;
+    height: 81%;
+    width: 5%;
+}
+
+.text-back{
+  margin: 0px 0px 0px -13px;
+  font-size: 20pt;
+  text-decoration: none;
+  font-weight: 600;
+  color: white;
+  text-shadow: 0px 0px 4px black;
+}
+
+.li-icon{
+  line-height: 40px;
+    color: #07224a;
+    font-size: 24px;
+    filter: drop-shadow(0px 4px 4px
+ rgba(0, 0, 0, 0.25));
+}
+
+input[type=range] ::-ms-thumb {
+  box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
+  border: 0px solid #000000;
+  height: 20px;
+  width: 39px;
+  border-radius: 7px;
+  background: #65001c;
+  cursor: pointer;
+}
+
+.stl-blc{
+  background: #DAE6ED;
+  margin-top: 18%;
+  min-height: 75%;
+  margin-right: 10%;
+  border-radius: 20px;
+  padding: 15% 6% 5% 5%;
+}
+.blck-mid{
+  border-top: 13px solid #3B6DB9;
+  background: white;
+  padding: 7%;
+  border-radius: 12px;
+}
+
+.nameEasy4{
+  margin-top: 4%;
+  position: absolute;
+  width: 240px;
+  height: 88px;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 72px;
+  line-height: 88px;
+  color: #3B6DB9;
+  text-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+}
+
+.btnCheck{
+  float: right;
+    margin: 16px 0px 16px 0px;
+    font-family: 'Montserrat';
+    background: #3b6db9;
+    border: 0px solid transparent;
+    width: 40%;
+    height: 47px;
+    border-radius: 5px;    
+    color: white;
+  }
+
+  div.scrollup {
+    position: fixed;
+    color: #fff;
+    background-color: #286090;
+    right: 20px;
+    bottom: 0px;
+    padding: 10px 43px;
+    font-size: 36px;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    cursor: pointer;
+    display: none;
+    text-align: center;
+    text-shadow: 0px 0px 5px black;
+  }
+  div.scrollup:hover {
+    background-color: #000; /* цвет заднего фона при наведении */
+  }
+
+  .linkToMap{
+    float: right;
+    color: #fff;
+    background-color: #286090;
+    padding: 49px 25px;
+    border-radius: 10px 0px 0px 10px;
+  }
+
+@media (max-width: 1900px) {
+  .btntimer{
+    width: 8%;
+  }
+  .timer-panel{
+    margin-left: 10%;
+    bottom: 2%; 
+    left: 0; 
+    z-index: 2;
+    background: #e4e5e6;
+  }
+}
+ @media (max-width: 768px) {
+  .btntimer{
+    width: 8%;
+    margin-right: 10px;
+    font-size: 8px; 
+    bottom: 0%;
+    left: 0; 
+  }
+ }
+ @media (max-width: 414px) {
+   .timer-panel{
+    margin-left: 15%;
+   }
+   .btn-second-nonactive{
+     font-size: 10pt;
+    margin: 0px 7px 10px 0px;
+   }
+  .btntimer{
+    width: 8%;
+    margin-right: 0px;
+    font-size: 8px; 
+    bottom: 0%;
+    left: 0; 
+  }
+}

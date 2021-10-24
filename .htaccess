@@ -1,0 +1,20 @@
+RewriteEngine on
+RewriteBase /
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /([^.]+)\.php\ HTTP
+RewriteRule ^([^.]+)\.php$\ codechallenge.life/$1 [R=301,L]
+RewriteCond %{REQUEST_URI} !(\.[^./]+)$
+RewriteCond %{REQUEST_fileNAME} !-d
+RewriteCond %{REQUEST_fileNAME} !-f
+RewriteRule (.*) /$1.php
+
+AddType application/x-httpd-php .js
+AddHandler x-httpd-php5 .js
+
+<FilesMatch "\.(js|php)$">
+SetHandler application/x-httpd-php
+</FilesMatch>
+
+RewriteCond %{HTTPS} !=on
+
+
+php_flag allow_url_fopen on
