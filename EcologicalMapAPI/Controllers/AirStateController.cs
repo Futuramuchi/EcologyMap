@@ -10,10 +10,21 @@ using System.Web.Http;
 
 namespace EcologicalMapAPI.Controllers
 {
+    /// <summary>
+    /// AirState
+    /// </summary>
     public class AirStateController : ApiController
     {
         private EcologicalMapEntities _ent { get; set; } = new EcologicalMapEntities();
-
+        
+        /// <summary>
+        /// Add new AirState
+        /// </summary>
+        /// <remarks>
+        /// Adding new AirState in DB
+        /// </remarks>
+        /// <param name="airStateModel"></param>
+        /// <returns></returns>
         public async Task<HttpResponseMessage> Post([FromBody] AirStateModel airStateModel)
         {
             try

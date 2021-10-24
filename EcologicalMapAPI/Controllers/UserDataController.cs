@@ -11,10 +11,21 @@ using System.Web.Http;
 
 namespace EcologicalMapAPI.Controllers
 {
+    /// <summary>
+    /// UserData
+    /// </summary>
     public class UserDataController : ApiController
     {
         private EcologicalMapEntities _ent { get; set; } = new EcologicalMapEntities();
 
+        /// <summary>
+        /// Add new User data (for mobile)
+        /// </summary>
+        /// <remarks>
+        /// Adding new user data via mobile application
+        /// </remarks>
+        /// <param name="userDataModel"></param>
+        /// <returns></returns>
         public async Task<HttpResponseMessage> Post([FromBody] UserDataModel userDataModel)
         {
             var userData = new UserData()
@@ -35,6 +46,13 @@ namespace EcologicalMapAPI.Controllers
             return Request.CreateResponse(HttpStatusCode.OK, "Данные успешно сохранены!");
         }
 
+        /// <summary>
+        /// Get all User data
+        /// </summary>
+        /// <remarks>
+        /// Get a list of all User data
+        /// </remarks>
+        /// <returns></returns>
         public async Task<HttpResponseMessage> Get() 
         {
             var userDataList = await _ent.UserData.Select(x => new UserDataModel()

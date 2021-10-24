@@ -11,10 +11,20 @@ using System.Web.Http;
 
 namespace EcologicalMapAPI.Controllers
 {
+    /// <summary>
+    /// UserGeosmile
+    /// </summary>
     public class UserGeosmileController : ApiController
     {
         private EcologicalMapEntities _ent { get; set; } = new EcologicalMapEntities();
 
+        /// <summary>
+        /// Get all User's geosmiles
+        /// </summary>
+        /// <remarks>
+        /// Get a list of all Users' geosmiles
+        /// </remarks>
+        /// <returns></returns>
         public async Task<HttpResponseMessage> GetAll()
         {
             var userGeosmile = await _ent.UserGeosmile.Select(x => new UserGeosmileModel()
@@ -29,6 +39,14 @@ namespace EcologicalMapAPI.Controllers
             return Request.CreateResponse(HttpStatusCode.OK, userGeosmile);
         }
 
+        /// <summary>
+        /// Add new User's geosmile data
+        /// </summary>
+        /// <remarks>
+        /// Adding new User's geosmile data in DB
+        /// </remarks>
+        /// <param name="userGeosmile"></param>
+        /// <returns></returns>
         public async Task<HttpResponseMessage> Post([FromBody] UserGeosmileModel userGeosmile)
         {
             try

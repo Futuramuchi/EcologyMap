@@ -8,7 +8,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <TimeStampOfAssociatedLegacyPublishXmlFile />
     <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA3+Hb8R1+oku9UyJtNPuckgAAAAACAAAAAAAQZgAAAAEAACAAAADeTJMt9D5fXHe6BcOZ062bsdMDTBv3I8+ce07Q4nVLzgAAAAAOgAAAAAIAACAAAAARSUWM0gXTv2Hg6UGhAt+zIYzohxP8VnluvpdrBYyeoDAAAABpXk1LZ912/XgdX0iXJ6ZdYjjCmlqPdZ+x6vQCa4pf8Bn5k+Fs1FW5gQNjM5jmCb5AAAAAAgBmIqC4jv7iUUZPZg3hG+8Dc0U5o+5lu1qLeDxbGNDrn/+lenB5+Ub5Jc5ncagkr0DNlrzSLThHS9jcfKkUOA==</EncryptedPassword>
     <_PublishTargetUrl>ftp://weather.makievksy.ru.com/weather.makievksy.ru.com</_PublishTargetUrl>
-    <History>True|2021-10-23T18:43:02.3529307Z;True|2021-10-23T16:56:46.0885081+03:00;True|2021-10-21T21:43:58.9947155+03:00;True|2021-10-17T19:15:54.8636151+03:00;</History>
+    <History>True|2021-10-24T18:42:42.9134898Z;True|2021-10-24T21:28:38.5198522+03:00;True|2021-10-23T21:43:02.3529307+03:00;True|2021-10-23T16:56:46.0885081+03:00;True|2021-10-21T21:43:58.9947155+03:00;True|2021-10-17T19:15:54.8636151+03:00;</History>
   </PropertyGroup>
   <ItemGroup>
     <File Include="Areas/HelpPage/HelpPage.css">
@@ -81,10 +81,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/17/2021 18:38:27</publishTime>
     </File>
     <File Include="bin/EcologicalMapAPI.dll">
-      <publishTime>10/23/2021 21:40:44</publishTime>
+      <publishTime>10/24/2021 21:40:26</publishTime>
     </File>
     <File Include="bin/EcologicalMapAPI.pdb">
-      <publishTime>10/23/2021 21:40:44</publishTime>
+      <publishTime>10/24/2021 21:40:26</publishTime>
+    </File>
+    <File Include="bin/EcologicalMapAPI.xml">
+      <publishTime>10/24/2021 21:40:26</publishTime>
     </File>
     <File Include="bin/EntityFramework.dll">
       <publishTime>10/17/2021 18:38:27</publishTime>
@@ -251,6 +254,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="bin/ru/EntityFramework.resources.dll">
       <publishTime>10/17/2021 18:38:27</publishTime>
     </File>
+    <File Include="bin/ru/EntityFramework.SqlServer.resources.dll">
+      <publishTime>10/23/2017 16:15:34</publishTime>
+    </File>
     <File Include="bin/ru/System.Net.Http.Formatting.resources.dll">
       <publishTime>10/17/2021 18:38:27</publishTime>
     </File>
@@ -281,6 +287,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="bin/ru/System.Web.WebPages.resources.dll">
       <publishTime>10/17/2021 18:38:27</publishTime>
     </File>
+    <File Include="bin/Swashbuckle.Core.dll">
+      <publishTime>07/08/2017 04:30:56</publishTime>
+    </File>
     <File Include="bin/System.Net.Http.Formatting.dll">
       <publishTime>10/17/2021 18:38:27</publishTime>
     </File>
@@ -310,6 +319,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     </File>
     <File Include="bin/System.Web.WebPages.Razor.dll">
       <publishTime>10/17/2021 18:38:27</publishTime>
+    </File>
+    <File Include="bin/WebActivatorEx.dll">
+      <publishTime>02/08/2013 20:42:28</publishTime>
     </File>
     <File Include="bin/WebGrease.dll">
       <publishTime>10/17/2021 18:38:27</publishTime>
@@ -408,7 +420,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/17/2021 18:38:27</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>10/17/2021 19:13:35</publishTime>
+      <publishTime>10/24/2021 21:26:59</publishTime>
     </File>
   </ItemGroup>
 </Project>

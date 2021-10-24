@@ -10,10 +10,18 @@ using System.Web.Http;
 
 namespace EcologicalMapAPI.Controllers
 {
+    /// <summary>
+    /// StationData
+    /// </summary>
     public class StationDataController : ApiController
     {
         private EcologicalMapEntities _ent { get; set; } = new EcologicalMapEntities();
 
+        /// <summary>
+        /// Get an appropriate data of station via its Id
+        /// </summary>
+        /// <param name="stationId"></param>
+        /// <returns></returns>
         public async Task<HttpResponseMessage> Get(int stationId)
         {
             var stationData = await _ent.StationData.Where(x => x.StationId == stationId).Select(x => new StationDataModel()
@@ -43,6 +51,15 @@ namespace EcologicalMapAPI.Controllers
             return Request.CreateResponse(HttpStatusCode.OK, stationData);
         }
 
+
+        /// <summary>
+        /// Add new Station data
+        /// </summary>
+        /// <remarks>
+        /// Adding new Station data
+        /// </remarks>
+        /// <param name="stationDataModel"></param>
+        /// <returns></returns>
         public async Task<HttpResponseMessage> Post([FromBody] StationDataModel stationDataModel)
         {
             var stationData = new StationData()

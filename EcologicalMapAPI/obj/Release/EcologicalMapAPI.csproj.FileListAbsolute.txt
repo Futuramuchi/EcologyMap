@@ -98,3 +98,7 @@ C:\Yena\Хакатоны\EcologyMap\EcologyMapAPI-main\EcologicalMapAPI\obj\Rele
 C:\Yena\Хакатоны\EcologyMap\EcologyMapAPI-main\EcologicalMapAPI\obj\Release\EcologicalMapAPI.csproj.CopyComplete
 C:\Yena\Хакатоны\EcologyMap\EcologyMapAPI-main\EcologicalMapAPI\obj\Release\EcologicalMapAPI.dll
 C:\Yena\Хакатоны\EcologyMap\EcologyMapAPI-main\EcologicalMapAPI\obj\Release\EcologicalMapAPI.pdb
+C:\Yena\Хакатоны\EcologyMap\EcologyMapAPI-main\EcologicalMapAPI\bin\Swashbuckle.Core.dll
+C:\Yena\Хакатоны\EcologyMap\EcologyMapAPI-main\EcologicalMapAPI\bin\WebActivatorEx.dll
+C:\Yena\Хакатоны\EcologyMap\EcologyMapAPI-main\EcologicalMapAPI\bin\ru\EntityFramework.SqlServer.resources.dll
+C:\Yena\Хакатоны\EcologyMap\EcologyMapAPI-main\EcologicalMapAPI\bin\EcologicalMapAPI.xml

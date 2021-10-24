@@ -10,10 +10,21 @@ using System.Web.Http;
 
 namespace EcologicalMapAPI.Controllers
 {
+    /// <summary>
+    /// LogAction
+    /// </summary>
     public class LogActionController : ApiController
     {
         private EcologicalMapEntities _ent { get; set; } = new EcologicalMapEntities();
 
+        /// <summary>
+        /// Add new LogAction
+        /// </summary>
+        /// <remarks>
+        /// Adding new Log
+        /// </remarks>
+        /// <param name="logActionModel"></param>
+        /// <returns></returns>
         public async Task<HttpResponseMessage> Post([FromBody] LogActionModel logActionModel)
         {
             var logAction = new LogAction()
