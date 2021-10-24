@@ -1,0 +1,4 @@
+${PODS_ROOT}/Target Support Files/Pods-Easy4EcoMap/Pods-Easy4EcoMap-frameworks.sh
+${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework
+${BUILT_PRODUCTS_DIR}/SwiftSoup/SwiftSoup.framework
+${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework
