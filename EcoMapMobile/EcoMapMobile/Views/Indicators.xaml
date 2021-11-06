@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EcoMapMobile.Views.Indicators"
+             BackgroundColor="#3B3B3B"
+            NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+            <Label Text="Показатели"
+                   Style="{StaticResource LblMain}"
+                   FontSize="35"
+                   FontAttributes="Bold"
+                   Margin="10, 0, 5, 5"/>
+
+            <Frame HasShadow="False" BackgroundColor="#454545" CornerRadius="8" Padding="7" Margin="10, 5, 10, 5">
+                <StackLayout Orientation="Horizontal">
+                    <Image Source="/Resources/pin.png" WidthRequest="20"/>
+                    <Label Text="г.Москва, район Останкинский"
+                       Style="{StaticResource LblMain}" FontSize="20"
+                           WidthRequest="305"/>
+
+                    <Image Source="/Resources/user_settings.png" WidthRequest="20"/>
+                </StackLayout>
+            </Frame>
+
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                <StackLayout Margin="5, 10, 40, 5">
+                    <StackLayout>
+                        <Label Text="Ветер"
+                               HorizontalTextAlignment="Center"
+                               Style="{StaticResource LblMain}"
+                               TextColor="#7F7F7F"
+                               FontSize="17"/>
+                        <Label Style="{StaticResource LblMain}"
+                               HorizontalTextAlignment="Center"/>
+                    </StackLayout>
+                    <StackLayout>
+                        <Label Text="Влажность"
+                               HorizontalTextAlignment="Center"
+                               Style="{StaticResource LblMain}"
+                               TextColor="#7F7F7F"
+                               FontSize="17"/>
+                        <Label Style="{StaticResource LblMain}"
+                               HorizontalTextAlignment="Center"/>
+                    </StackLayout>
+                </StackLayout>
+                <StackLayout Margin="40, 10, 5, 5">
+                    <StackLayout>
+                        <Label Text="Давление"
+                               HorizontalTextAlignment="Center"
+                               Style="{StaticResource LblMain}"
+                               TextColor="#7F7F7F"
+                               FontSize="17"/>
+                        <Label Style="{StaticResource LblMain}"
+                               HorizontalTextAlignment="Center"/>
+                    </StackLayout>
+                    <StackLayout>
+                        <Label Text="Дальность видимости"
+                               WidthRequest="150"
+                               HorizontalTextAlignment="Center"
+                               Style="{StaticResource LblMain}"
+                               TextColor="#7F7F7F"
+                               FontSize="17"/>
+                        <Label Style="{StaticResource LblMain}"
+                               HorizontalTextAlignment="Center"/>
+                    </StackLayout>
+                </StackLayout>
+            </StackLayout>
+
+            <Frame BackgroundColor="#525252" HasShadow="False" CornerRadius="8" Margin="10, 5, 10, 5" Padding="4">
+                <StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Индекс качества воздуха"
+                       Style="{StaticResource LblMain}" FontSize="20"
+                               WidthRequest="330"/>
+
+                        <ImageButton Source="/Resources/question.png" BackgroundColor="Transparent" WidthRequest="25"/>
+                    </StackLayout>
+
+                    <StackLayout>
+                    <ProgressBar Margin="10"/>
+                        <Label Text="NO" Style="{StaticResource LblMain}" HorizontalTextAlignment="Center" FontSize="19"/>
+                        <Label x:Name="Value" FontSize="25" FontAttributes="Bold" HorizontalTextAlignment="Center"/>
+                        <Label Text="Показатель в норме" Style="{StaticResource LblMain}" FontSize="17"
+                               HorizontalTextAlignment="Center"/>
+                    </StackLayout>
+
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                        <StackLayout Margin="5, 5, 50, 5">
+                            <Label x:Name="NO2" FontAttributes="Bold" Style="{StaticResource LblMain}"/>
+                            <Label Text="NO2" Style="{StaticResource LblMain}"/>
+                        </StackLayout>
+                            <StackLayout Margin="5, 5, 50, 5">
+                            <Label x:Name="NO" FontAttributes="Bold" Style="{StaticResource LblMain}"/>
+                            <Label Text="NO" Style="{StaticResource LblMain}"/>
+                        </StackLayout>
+                            <StackLayout Margin="5, 5, 50, 5">
+                            <Label x:Name="CO" FontAttributes="Bold" Style="{StaticResource LblMain}"/>
+                            <Label Text="CO" Style="{StaticResource LblMain}"/>
+                        </StackLayout>
+                            <StackLayout Margin="5, 5, 5, 5">
+                            <Label x:Name="PM10" FontAttributes="Bold" Style="{StaticResource LblMain}"/>
+                            <Label Text="PM10" Style="{StaticResource LblMain}"/>
+                        </StackLayout>
+                    </StackLayout>
+                </StackLayout>
+            </Frame>
+        </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

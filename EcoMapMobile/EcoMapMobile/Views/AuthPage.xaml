@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:EcoMapMobile.CustomRenderer" xmlns:viewmodels="clr-namespace:EcoMapMobile.ViewModels" x:DataType="viewmodels:AuthViewModel"
+             x:Class="EcoMapMobile.Views.AuthPage"
+             BackgroundColor="#3B3B3B"
+             NavigationPage.HasNavigationBar="False">
+    <StackLayout>
+        <Label Text="Добро
+               пожаловать!"
+               Style="{StaticResource LblMain}"
+               FontSize="35"
+               Margin="10, 10, 15, 10"
+               FontAttributes="Bold"/>
+        <Frame CornerRadius="8" BackgroundColor="#1E1E1E" Padding="3" Margin="10, 5, 10, 5" HasShadow="False">
+            <local:MyCustomEntry Placeholder="Login" Style="{StaticResource EntrMain}" Text="{Binding Login}"/>
+        </Frame>
+        <Frame CornerRadius="8"  BackgroundColor="#1E1E1E" Padding="3" Margin="10, 5, 10, 5" HasShadow="False">
+            <local:MyCustomEntry Placeholder="Password" IsPassword="True" Style="{StaticResource EntrMain}" Text="{Binding Password}"/>
+        </Frame>
+        <Label Text="Забыли пароль?"
+               TextColor="#984545"
+               HorizontalOptions="End"
+               Style="{StaticResource LblMain}"
+               Margin="5, 0, 10, 5"/>
+
+        <StackLayout Orientation="Horizontal"
+                     HorizontalOptions="Center"
+                     Margin="10, 20, 10, 5">
+            <Label Text="Войти"
+                   Style="{StaticResource LblMain}"
+                   FontSize="20"/>
+
+            <Frame WidthRequest="220" BackgroundColor="Transparent"/>
+            <Button CornerRadius="50" WidthRequest="50" HeightRequest="50" BackgroundColor="#984545" ImageSource="/Resources/arrow.png"
+                    Command="{Binding Authorisation}"/>
+        </StackLayout>
+
+        <StackLayout Margin="5, 30, 5, 5">
+            <Label Text="Войти через" HorizontalOptions="Center" TextColor="#626262"/>
+        <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                <ImageButton BackgroundColor="Transparent" Source="Resources/gos.png" WidthRequest="50" Margin="5, 15, 10, 5"/>
+                <ImageButton BackgroundColor="Transparent" Source="/Resources/mos.png" WidthRequest="50" Margin="5, 15, 10, 5"/>
+            </StackLayout>
+        </StackLayout>
+
+        <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Margin="5, 60, 5, 5">
+            <Label Text="Еще нет аккаунта?" TextColor="#626262"/>
+            <Label Text="Зарегистрируйтесь!" TextColor="Gray"/>
+        </StackLayout>
+    </StackLayout>
+
+    
+</ContentPage>

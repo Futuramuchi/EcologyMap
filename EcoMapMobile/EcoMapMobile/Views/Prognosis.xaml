@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:EcoMapMobile.CustomRenderer"
+             x:Class="EcoMapMobile.Views.Prognosis"
+              BackgroundColor="#3B3B3B"
+            NavigationPage.HasNavigationBar="False">
+        <ContentPage.Content>
+    <ScrollView>
+            <StackLayout>
+                <Label Text="Прогноз"
+                   Style="{StaticResource LblMain}"
+                   FontSize="35"
+                   FontAttributes="Bold"
+                   Margin="10, 0, 10, 10"/>
+
+                <Label Text="Дата и время" Style="{StaticResource LblMain}"
+                   Margin="10, 5, 5, 5"/>
+                <StackLayout Orientation="Horizontal" Margin="10, 5, 5, 5">
+                    <Frame Padding="4, 1, 4, 1" BackgroundColor="#4B4B4D" CornerRadius="8" HasShadow="False">
+                        <local:MyCustomDatePicker TextColor="White"/>
+                    </Frame>
+                    <Frame Padding="4, 1, 4, 1" BackgroundColor="#4B4B4D" CornerRadius="8" HasShadow="False">
+                        <local:MyCustomTimePicker TextColor="White"/>
+                    </Frame>
+                </StackLayout>
+
+                <Label Text="NO2"
+                   Style="{StaticResource LblMain}"
+                   Margin="10, 5, 5, 5"/>
+                <Frame CornerRadius="8" BackgroundColor="#1E1E1E" Padding="3" Margin="10, 0, 10, 5" HasShadow="False">
+                    <local:MyCustomEntry Style="{StaticResource EntrMain}" Placeholder="ПДК"/>
+                </Frame>
+
+
+                <Label Text="NO"
+                   Style="{StaticResource LblMain}"
+                   Margin="10, 5, 5, 5"/>
+                <Frame CornerRadius="8" BackgroundColor="#1E1E1E" Padding="3" Margin="10, 0, 10, 5" HasShadow="False">
+                    <local:MyCustomEntry Style="{StaticResource EntrMain}" Placeholder="ПДК"/>
+                </Frame>
+
+                <Label Text="PM10"
+                   Style="{StaticResource LblMain}"
+                   Margin="10, 5, 5, 5"/>
+                <Frame CornerRadius="8" BackgroundColor="#1E1E1E" Padding="3" Margin="10, 0, 10, 5" HasShadow="False">
+                    <local:MyCustomEntry Style="{StaticResource EntrMain}" Placeholder="ПДК"/>
+                </Frame>
+
+                <Label Text="Скорость ветра"
+                   Style="{StaticResource LblMain}"
+                   Margin="10, 5, 5, 5"/>
+                <Frame CornerRadius="8" BackgroundColor="#1E1E1E" Padding="3" Margin="10, 0, 10, 5" HasShadow="False">
+                    <local:MyCustomEntry Style="{StaticResource EntrMain}" Placeholder="м/с"/>
+                </Frame>
+
+                <Label Text="Направление ветра"
+                   Style="{StaticResource LblMain}"
+                   Margin="10, 5, 5, 5"/>
+                <Frame CornerRadius="8" BackgroundColor="#1E1E1E" Padding="3" Margin="10, 0, 10, 5" HasShadow="False">
+                    <local:MyCustomEntry Style="{StaticResource EntrMain}" Placeholder="градусов"/>
+                </Frame>
+
+
+                <Label Text="Направление ветра"
+                   Style="{StaticResource LblMain}"
+                   Margin="10, 5, 5, 5"/>
+                <Frame CornerRadius="8" BackgroundColor="#1E1E1E" Padding="3" Margin="10, 0, 10, 5" HasShadow="False">
+                    <local:MyCustomEntry Style="{StaticResource EntrMain}" Placeholder="градусов"/>
+                </Frame>
+
+                <Label Text="Давление"
+                   Style="{StaticResource LblMain}"
+                   Margin="10, 5, 5, 5"/>
+                <Frame CornerRadius="8" BackgroundColor="#1E1E1E" Padding="3" Margin="10, 0, 10, 5" HasShadow="False">
+                    <local:MyCustomEntry Style="{StaticResource EntrMain}" Placeholder="мм рт. ст"/>
+                </Frame>
+
+                <Label Text="Влажность"
+                   Style="{StaticResource LblMain}"
+                   Margin="10, 5, 5, 5"/>
+                <Frame CornerRadius="8" BackgroundColor="#1E1E1E" Padding="3" Margin="10, 0, 10, 5" HasShadow="False">
+                    <local:MyCustomEntry Style="{StaticResource EntrMain}" Placeholder="е.и"/>
+                </Frame>
+
+                <Button Text="Спронозировать" BackgroundColor="Black" TextColor="White" TextTransform="Default"
+                        Margin="10, 5, 10, 10" CornerRadius="8"/>
+            </StackLayout>
+    </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

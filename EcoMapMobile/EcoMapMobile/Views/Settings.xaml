@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EcoMapMobile.Views.Settings"
+             BackgroundColor="#3B3B3B"
+            NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+            <Label Text="Настройки"
+                   Style="{StaticResource LblMain}"
+                   FontSize="35"
+                   FontAttributes="Bold"
+                   Margin="10, 0, 10, 10"/>
+
+            <Label Text="Основные"
+                   Style="{StaticResource LblMain}"
+                   FontAttributes="Bold"
+                   Margin="10, 5, 5, 5"
+                   FontSize="20"/>
+
+            <Frame HasShadow="False" BackgroundColor="#454545" CornerRadius="8" Padding="15" Margin="10, 5, 10, 5">
+                <StackLayout>
+                    <StackLayout Orientation="Horizontal" Margin="0, 0, 0, 10">
+                        <Image Source="/Resources/user.png" WidthRequest="20"/>
+                        <Label Text="Профиль" Style="{StaticResource LblMain}" FontSize="17" WidthRequest="300"/>
+
+                        <ImageButton Source="/Resources/btn.png" WidthRequest="15" BackgroundColor="Transparent"/>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal" Margin="0, 10, 0, 0">
+                        <Image Source="/Resources/notification.png" WidthRequest="23"/>
+                        <Label Text="Уведомления" Style="{StaticResource LblMain}" FontSize="17" WidthRequest="300"/>
+
+                        <Switch BackgroundColor="Transparent" IsToggled="True" OnColor="#7F40A7" ThumbColor="#7F40A7"/>
+                    </StackLayout>
+                </StackLayout>
+            </Frame>
+
+            <Label Text="Поддержка"
+                   Style="{StaticResource LblMain}"
+                   FontAttributes="Bold"
+                   Margin="10, 5, 5, 5"
+                   FontSize="20"/>
+
+            <Frame HasShadow="False" BackgroundColor="#454545" CornerRadius="8" Padding="15" Margin="10, 5, 10, 5">
+                <StackLayout>
+                    <StackLayout Orientation="Horizontal" Margin="0, 0, 0, 10">
+                        <Image Source="/Resources/question.png" WidthRequest="20"/>
+                        <Label Text="FAQ" Style="{StaticResource LblMain}" FontSize="17" WidthRequest="300"/>
+
+                        <ImageButton Source="/Resources/btn.png" WidthRequest="15" BackgroundColor="Transparent"/>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal" Margin="0, 10, 0, 10">
+                        <Image Source="/Resources/info.png" WidthRequest="20"/>
+                        <Label Text="Пользовательский гайд" Style="{StaticResource LblMain}" FontSize="17" WidthRequest="300"/>
+
+                        <ImageButton Source="/Resources/btn.png" WidthRequest="15" BackgroundColor="Transparent"/>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal" Margin="0, 10, 0, 0">
+                        <Image Source="/Resources/phone.png" WidthRequest="20"/>
+                        <Label Text="Связаться с нами" Style="{StaticResource LblMain}" FontSize="17" WidthRequest="300"/>
+
+                        <ImageButton Source="/Resources/btn.png" WidthRequest="15" BackgroundColor="Transparent"/>
+                    </StackLayout>
+                    
+                </StackLayout>
+            </Frame>
+
+            <Frame HasShadow="False" BackgroundColor="#454545" CornerRadius="8" Padding="15" Margin="10, 5, 10, 20">
+                <StackLayout Orientation="Horizontal">
+                    <Image Source="/Resources/exit.png" WidthRequest="20"/>
+                    <Label Text="Выйти" Style="{StaticResource LblMain}" FontSize="17" WidthRequest="300"/>
+
+                    <ImageButton Source="/Resources/btn.png" WidthRequest="15" BackgroundColor="Transparent"/>
+                </StackLayout>
+            </Frame>
+        </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

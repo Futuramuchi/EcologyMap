@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31613.86
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EcoMapMobile.Android", "EcoMapMobile\EcoMapMobile.Android\EcoMapMobile.Android.csproj", "{3BB8B3BF-BF6E-4037-B1A5-F25D42052C9D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EcoMapMobile", "EcoMapMobile\EcoMapMobile\EcoMapMobile.csproj", "{A2E4F5BC-4D70-46F8-B4F1-997C07E235AB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3BB8B3BF-BF6E-4037-B1A5-F25D42052C9D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3BB8B3BF-BF6E-4037-B1A5-F25D42052C9D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3BB8B3BF-BF6E-4037-B1A5-F25D42052C9D}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{3BB8B3BF-BF6E-4037-B1A5-F25D42052C9D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3BB8B3BF-BF6E-4037-B1A5-F25D42052C9D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3BB8B3BF-BF6E-4037-B1A5-F25D42052C9D}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{A2E4F5BC-4D70-46F8-B4F1-997C07E235AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A2E4F5BC-4D70-46F8-B4F1-997C07E235AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A2E4F5BC-4D70-46F8-B4F1-997C07E235AB}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{A2E4F5BC-4D70-46F8-B4F1-997C07E235AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A2E4F5BC-4D70-46F8-B4F1-997C07E235AB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A2E4F5BC-4D70-46F8-B4F1-997C07E235AB}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DE0776E2-4A62-454E-B356-BF4BD08AEC3B}
+	EndGlobalSection
+EndGlobal

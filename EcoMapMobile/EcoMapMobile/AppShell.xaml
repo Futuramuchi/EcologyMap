@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Shell xmlns="http://xamarin.com/schemas/2014/forms" 
+       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+       xmlns:local="clr-namespace:EcoMapMobile.Views"
+       Title="EcoMapMobile"
+       x:Class="EcoMapMobile.AppShell"
+       Shell.NavBarHasShadow="False">
+
+    <!--
+        The overall app visual hierarchy is defined here, along with navigation.
+    
+        https://docs.microsoft.com/xamarin/xamarin-forms/app-fundamentals/shell/
+    -->
+
+    <Shell.Resources>
+        <ResourceDictionary>
+            <Style x:Key="BaseStyle" TargetType="Element">
+                <Setter Property="Shell.BackgroundColor" Value="#3B3B3B"/>
+                <Setter Property="Shell.TitleColor" Value="White" />
+                <Setter Property="Shell.DisabledColor" Value="#B4FFFFFF" />
+                <Setter Property="Shell.UnselectedColor" Value="#BA77E4" />
+                <Setter Property="Shell.TabBarBackgroundColor" Value="#3B3B3B"/>
+                <Setter Property="Shell.TabBarUnselectedColor" Value="#BA77E4"/>
+                <Setter Property="Shell.TabBarTitleColor" Value="#7F40A7"/>
+            </Style>
+            <Style TargetType="TabBar" BasedOn="{StaticResource BaseStyle}" />
+            <Style TargetType="FlyoutItem" BasedOn="{StaticResource BaseStyle}" />
+        </ResourceDictionary>
+    </Shell.Resources>
+
+    <TabBar>
+        <ShellContent Icon="chart.png" Route="Indicators" ContentTemplate="{DataTemplate local:Indicators}" />
+        <ShellContent Icon="sensor.png" Route="Prognosis" ContentTemplate="{DataTemplate local:Prognosis}" />
+        <ShellContent Icon="map.png" Route="Map" ContentTemplate="{DataTemplate local:Map}" />
+        <ShellContent Icon="settings.png" Route="Settings" ContentTemplate="{DataTemplate local:Settings}" />
+    </TabBar>
+
+    <!--
+        If you would like to navigate to this content you can do so by calling
+        await Shell.Current.GoToAsync("//LoginPage");
+    -->
+    <TabBar>
+        <ShellContent Route="LoginPage" ContentTemplate="{DataTemplate local:LoginPage}" />
+    </TabBar>
+
+
+</Shell>
