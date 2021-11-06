@@ -1,0 +1,607 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1B1E850F270B059E00BCEFD7 /* Gilroy-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1B1E8508270B059E00BCEFD7 /* Gilroy-Regular.ttf */; };
+		1B1E8510270B059E00BCEFD7 /* Gilroy-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1B1E8509270B059E00BCEFD7 /* Gilroy-Black.ttf */; };
+		1B1E8511270B059E00BCEFD7 /* Gilroy-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1B1E850A270B059E00BCEFD7 /* Gilroy-Medium.ttf */; };
+		1B1E8512270B059E00BCEFD7 /* Gilroy-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1B1E850B270B059E00BCEFD7 /* Gilroy-Bold.ttf */; };
+		1B1E8513270B059E00BCEFD7 /* Gilroy-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1B1E850C270B059E00BCEFD7 /* Gilroy-Semibold.ttf */; };
+		1B1E8514270B059E00BCEFD7 /* Gilroy-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1B1E850D270B059E00BCEFD7 /* Gilroy-Light.ttf */; };
+		1B1E8515270B059E00BCEFD7 /* Gilroy-Heavy.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1B1E850E270B059E00BCEFD7 /* Gilroy-Heavy.ttf */; };
+		1B1E8518270B117E00BCEFD7 /* MainMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1E8517270B117E00BCEFD7 /* MainMapView.swift */; };
+		1B1E851B270B127E00BCEFD7 /* LocationManagerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1E851A270B127E00BCEFD7 /* LocationManagerViewModel.swift */; };
+		1B35165A270C420A00D6630A /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B351659270C420A00D6630A /* HomeView.swift */; };
+		1B35165C270C4A6B00D6630A /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B35165B270C4A6B00D6630A /* MainTabView.swift */; };
+		1B35165F270C5B2100D6630A /* Charts in Frameworks */ = {isa = PBXBuildFile; productRef = 1B35165E270C5B2100D6630A /* Charts */; };
+		1B351661270C603D00D6630A /* MapWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B351660270C603D00D6630A /* MapWebView.swift */; };
+		1B351665270C66C300D6630A /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B351664270C66C300D6630A /* SettingsView.swift */; };
+		1B351667270C696300D6630A /* LocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B351666270C696300D6630A /* LocationView.swift */; };
+		1B78ECAA270B024B004D3FCF /* Easy4EcoMapApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B78ECA9270B024B004D3FCF /* Easy4EcoMapApp.swift */; };
+		1B78ECAE270B024C004D3FCF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B78ECAD270B024C004D3FCF /* Assets.xcassets */; };
+		1B78ECB1270B024C004D3FCF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B78ECB0270B024C004D3FCF /* Preview Assets.xcassets */; };
+		1B78ECB9270B025C004D3FCF /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B78ECB8270B025C004D3FCF /* RootView.swift */; };
+		1B78ECBB270B0270004D3FCF /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B78ECBA270B0270004D3FCF /* SignInView.swift */; };
+		1B7F72E7270F3A1200283C89 /* BluetoothProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7F72E6270F3A1200283C89 /* BluetoothProtocol.swift */; };
+		1BE389F2270EF8050009C9AA /* QualityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BE389F1270EF8050009C9AA /* QualityModel.swift */; };
+		370A75302724AF5D001830CF /* StationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370A752F2724AF5D001830CF /* StationModel.swift */; };
+		37661E322725CE77004CAEDD /* PredictViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37661E312725CE77004CAEDD /* PredictViewModel.swift */; };
+		37748415270D869100DAEFA8 /* SearchMapModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37748414270D869100DAEFA8 /* SearchMapModel.swift */; };
+		37D13A15272577B7000F3D64 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37D13A14272577B7000F3D64 /* Launch Screen.storyboard */; };
+		37D13A1727258FB3000F3D64 /* HTMLParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D13A1627258FB3000F3D64 /* HTMLParser.swift */; };
+		37D13A1B2725B3C0000F3D64 /* ForecastingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D13A1A2725B3C0000F3D64 /* ForecastingView.swift */; };
+		37F9994127368F9300661FB4 /* IndicatorsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F9994027368F9300661FB4 /* IndicatorsModel.swift */; };
+		37F999432736992600661FB4 /* IndicatorsAQIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F999422736992600661FB4 /* IndicatorsAQIModel.swift */; };
+		37F9994527371CC000661FB4 /* PredictView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F9994427371CC000661FB4 /* PredictView.swift */; };
+		37F99947273720F100661FB4 /* PredictModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F99946273720F100661FB4 /* PredictModel.swift */; };
+		37F999492737315A00661FB4 /* ColorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F999482737315A00661FB4 /* ColorModel.swift */; };
+		8846E2D0022131CEEC42E101 /* Pods_Easy4EcoMap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79D67D8E05B29A4540A441B1 /* Pods_Easy4EcoMap.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1B1E8508270B059E00BCEFD7 /* Gilroy-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-Regular.ttf"; sourceTree = "<group>"; };
+		1B1E8509270B059E00BCEFD7 /* Gilroy-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-Black.ttf"; sourceTree = "<group>"; };
+		1B1E850A270B059E00BCEFD7 /* Gilroy-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-Medium.ttf"; sourceTree = "<group>"; };
+		1B1E850B270B059E00BCEFD7 /* Gilroy-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-Bold.ttf"; sourceTree = "<group>"; };
+		1B1E850C270B059E00BCEFD7 /* Gilroy-Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-Semibold.ttf"; sourceTree = "<group>"; };
+		1B1E850D270B059E00BCEFD7 /* Gilroy-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-Light.ttf"; sourceTree = "<group>"; };
+		1B1E850E270B059E00BCEFD7 /* Gilroy-Heavy.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-Heavy.ttf"; sourceTree = "<group>"; };
+		1B1E8516270B05AF00BCEFD7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1B1E8517270B117E00BCEFD7 /* MainMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMapView.swift; sourceTree = "<group>"; };
+		1B1E851A270B127E00BCEFD7 /* LocationManagerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManagerViewModel.swift; sourceTree = "<group>"; };
+		1B351659270C420A00D6630A /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		1B35165B270C4A6B00D6630A /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
+		1B351660270C603D00D6630A /* MapWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapWebView.swift; sourceTree = "<group>"; };
+		1B351664270C66C300D6630A /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		1B351666270C696300D6630A /* LocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationView.swift; sourceTree = "<group>"; };
+		1B78ECA6270B024B004D3FCF /* Easy4EcoMap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Easy4EcoMap.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1B78ECA9270B024B004D3FCF /* Easy4EcoMapApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Easy4EcoMapApp.swift; sourceTree = "<group>"; };
+		1B78ECAD270B024C004D3FCF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1B78ECB0270B024C004D3FCF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		1B78ECB8270B025C004D3FCF /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		1B78ECBA270B0270004D3FCF /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
+		1B7F72E6270F3A1200283C89 /* BluetoothProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothProtocol.swift; sourceTree = "<group>"; };
+		1BE389F1270EF8050009C9AA /* QualityModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QualityModel.swift; sourceTree = "<group>"; };
+		370A752F2724AF5D001830CF /* StationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationModel.swift; sourceTree = "<group>"; };
+		37661E312725CE77004CAEDD /* PredictViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredictViewModel.swift; sourceTree = "<group>"; };
+		37748414270D869100DAEFA8 /* SearchMapModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchMapModel.swift; sourceTree = "<group>"; };
+		37D13A14272577B7000F3D64 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		37D13A1627258FB3000F3D64 /* HTMLParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTMLParser.swift; sourceTree = "<group>"; };
+		37D13A1A2725B3C0000F3D64 /* ForecastingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastingView.swift; sourceTree = "<group>"; };
+		37F9994027368F9300661FB4 /* IndicatorsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicatorsModel.swift; sourceTree = "<group>"; };
+		37F999422736992600661FB4 /* IndicatorsAQIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicatorsAQIModel.swift; sourceTree = "<group>"; };
+		37F9994427371CC000661FB4 /* PredictView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredictView.swift; sourceTree = "<group>"; };
+		37F99946273720F100661FB4 /* PredictModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredictModel.swift; sourceTree = "<group>"; };
+		37F999482737315A00661FB4 /* ColorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorModel.swift; sourceTree = "<group>"; };
+		79D67D8E05B29A4540A441B1 /* Pods_Easy4EcoMap.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Easy4EcoMap.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B0EEC819CEB4550B5F571AA5 /* Pods-Easy4EcoMap.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Easy4EcoMap.debug.xcconfig"; path = "Target Support Files/Pods-Easy4EcoMap/Pods-Easy4EcoMap.debug.xcconfig"; sourceTree = "<group>"; };
+		B77C9C941081208B1B0B22C9 /* Pods-Easy4EcoMap.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Easy4EcoMap.release.xcconfig"; path = "Target Support Files/Pods-Easy4EcoMap/Pods-Easy4EcoMap.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1B78ECA3270B024B004D3FCF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1B35165F270C5B2100D6630A /* Charts in Frameworks */,
+				8846E2D0022131CEEC42E101 /* Pods_Easy4EcoMap.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1B1E8507270B059200BCEFD7 /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				1B1E8509270B059E00BCEFD7 /* Gilroy-Black.ttf */,
+				1B1E850B270B059E00BCEFD7 /* Gilroy-Bold.ttf */,
+				1B1E850E270B059E00BCEFD7 /* Gilroy-Heavy.ttf */,
+				1B1E850D270B059E00BCEFD7 /* Gilroy-Light.ttf */,
+				1B1E850A270B059E00BCEFD7 /* Gilroy-Medium.ttf */,
+				1B1E8508270B059E00BCEFD7 /* Gilroy-Regular.ttf */,
+				1B1E850C270B059E00BCEFD7 /* Gilroy-Semibold.ttf */,
+			);
+			path = Font;
+			sourceTree = "<group>";
+		};
+		1B1E8519270B127500BCEFD7 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				1B1E851A270B127E00BCEFD7 /* LocationManagerViewModel.swift */,
+				37661E312725CE77004CAEDD /* PredictViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		1B78EC9D270B024B004D3FCF = {
+			isa = PBXGroup;
+			children = (
+				1B78ECA8270B024B004D3FCF /* Easy4EcoMap */,
+				1B78ECA7270B024B004D3FCF /* Products */,
+				CD8B3B5924203756FB7CBC0C /* Pods */,
+				D7EE0FFED994782C5492AFF4 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		1B78ECA7270B024B004D3FCF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1B78ECA6270B024B004D3FCF /* Easy4EcoMap.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1B78ECA8270B024B004D3FCF /* Easy4EcoMap */ = {
+			isa = PBXGroup;
+			children = (
+				37748413270D868100DAEFA8 /* Model */,
+				1B1E8519270B127500BCEFD7 /* ViewModel */,
+				1B78ECB7270B0251004D3FCF /* View */,
+				1B78ECBC270B0294004D3FCF /* common */,
+				1B78ECAF270B024C004D3FCF /* Preview Content */,
+			);
+			path = Easy4EcoMap;
+			sourceTree = "<group>";
+		};
+		1B78ECAF270B024C004D3FCF /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				1B78ECB0270B024C004D3FCF /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		1B78ECB7270B0251004D3FCF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1B78ECB8270B025C004D3FCF /* RootView.swift */,
+				1B78ECBA270B0270004D3FCF /* SignInView.swift */,
+				1B1E8517270B117E00BCEFD7 /* MainMapView.swift */,
+				1B351659270C420A00D6630A /* HomeView.swift */,
+				1B35165B270C4A6B00D6630A /* MainTabView.swift */,
+				1B351660270C603D00D6630A /* MapWebView.swift */,
+				1B351664270C66C300D6630A /* SettingsView.swift */,
+				1B351666270C696300D6630A /* LocationView.swift */,
+				37D13A1A2725B3C0000F3D64 /* ForecastingView.swift */,
+				37F9994427371CC000661FB4 /* PredictView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1B78ECBC270B0294004D3FCF /* common */ = {
+			isa = PBXGroup;
+			children = (
+				1B1E8516270B05AF00BCEFD7 /* Info.plist */,
+				1B7F72E6270F3A1200283C89 /* BluetoothProtocol.swift */,
+				1B1E8507270B059200BCEFD7 /* Font */,
+				1B78ECA9270B024B004D3FCF /* Easy4EcoMapApp.swift */,
+				1B78ECAD270B024C004D3FCF /* Assets.xcassets */,
+				37D13A14272577B7000F3D64 /* Launch Screen.storyboard */,
+				37D13A1627258FB3000F3D64 /* HTMLParser.swift */,
+			);
+			path = common;
+			sourceTree = "<group>";
+		};
+		37748413270D868100DAEFA8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				37748414270D869100DAEFA8 /* SearchMapModel.swift */,
+				1BE389F1270EF8050009C9AA /* QualityModel.swift */,
+				370A752F2724AF5D001830CF /* StationModel.swift */,
+				37F9994027368F9300661FB4 /* IndicatorsModel.swift */,
+				37F999422736992600661FB4 /* IndicatorsAQIModel.swift */,
+				37F99946273720F100661FB4 /* PredictModel.swift */,
+				37F999482737315A00661FB4 /* ColorModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CD8B3B5924203756FB7CBC0C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B0EEC819CEB4550B5F571AA5 /* Pods-Easy4EcoMap.debug.xcconfig */,
+				B77C9C941081208B1B0B22C9 /* Pods-Easy4EcoMap.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		D7EE0FFED994782C5492AFF4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				79D67D8E05B29A4540A441B1 /* Pods_Easy4EcoMap.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1B78ECA5270B024B004D3FCF /* Easy4EcoMap */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1B78ECB4270B024C004D3FCF /* Build configuration list for PBXNativeTarget "Easy4EcoMap" */;
+			buildPhases = (
+				C0557017204B39559DED7397 /* [CP] Check Pods Manifest.lock */,
+				1B78ECA2270B024B004D3FCF /* Sources */,
+				1B78ECA3270B024B004D3FCF /* Frameworks */,
+				1B78ECA4270B024B004D3FCF /* Resources */,
+				9F3F0489631DC7CC32D13E9B /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Easy4EcoMap;
+			packageProductDependencies = (
+				1B35165E270C5B2100D6630A /* Charts */,
+			);
+			productName = Easy4EcoMap;
+			productReference = 1B78ECA6270B024B004D3FCF /* Easy4EcoMap.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1B78EC9E270B024B004D3FCF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1300;
+				LastUpgradeCheck = 1300;
+				TargetAttributes = {
+					1B78ECA5270B024B004D3FCF = {
+						CreatedOnToolsVersion = 13.0;
+					};
+				};
+			};
+			buildConfigurationList = 1B78ECA1270B024B004D3FCF /* Build configuration list for PBXProject "Easy4EcoMap" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 1B78EC9D270B024B004D3FCF;
+			packageReferences = (
+				1B35165D270C5B2100D6630A /* XCRemoteSwiftPackageReference "swiftui-charts" */,
+			);
+			productRefGroup = 1B78ECA7270B024B004D3FCF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1B78ECA5270B024B004D3FCF /* Easy4EcoMap */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1B78ECA4270B024B004D3FCF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1B1E8510270B059E00BCEFD7 /* Gilroy-Black.ttf in Resources */,
+				1B78ECB1270B024C004D3FCF /* Preview Assets.xcassets in Resources */,
+				1B1E8513270B059E00BCEFD7 /* Gilroy-Semibold.ttf in Resources */,
+				1B1E8511270B059E00BCEFD7 /* Gilroy-Medium.ttf in Resources */,
+				1B1E8512270B059E00BCEFD7 /* Gilroy-Bold.ttf in Resources */,
+				1B1E850F270B059E00BCEFD7 /* Gilroy-Regular.ttf in Resources */,
+				1B1E8515270B059E00BCEFD7 /* Gilroy-Heavy.ttf in Resources */,
+				1B78ECAE270B024C004D3FCF /* Assets.xcassets in Resources */,
+				37D13A15272577B7000F3D64 /* Launch Screen.storyboard in Resources */,
+				1B1E8514270B059E00BCEFD7 /* Gilroy-Light.ttf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		9F3F0489631DC7CC32D13E9B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Easy4EcoMap/Pods-Easy4EcoMap-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Easy4EcoMap/Pods-Easy4EcoMap-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Easy4EcoMap/Pods-Easy4EcoMap-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C0557017204B39559DED7397 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Easy4EcoMap-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1B78ECA2270B024B004D3FCF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				37D13A1B2725B3C0000F3D64 /* ForecastingView.swift in Sources */,
+				37F99947273720F100661FB4 /* PredictModel.swift in Sources */,
+				1B78ECAA270B024B004D3FCF /* Easy4EcoMapApp.swift in Sources */,
+				1B35165A270C420A00D6630A /* HomeView.swift in Sources */,
+				37F9994127368F9300661FB4 /* IndicatorsModel.swift in Sources */,
+				37661E322725CE77004CAEDD /* PredictViewModel.swift in Sources */,
+				37D13A1727258FB3000F3D64 /* HTMLParser.swift in Sources */,
+				37F9994527371CC000661FB4 /* PredictView.swift in Sources */,
+				1B351661270C603D00D6630A /* MapWebView.swift in Sources */,
+				37F999492737315A00661FB4 /* ColorModel.swift in Sources */,
+				1B78ECBB270B0270004D3FCF /* SignInView.swift in Sources */,
+				1B7F72E7270F3A1200283C89 /* BluetoothProtocol.swift in Sources */,
+				37748415270D869100DAEFA8 /* SearchMapModel.swift in Sources */,
+				1B1E8518270B117E00BCEFD7 /* MainMapView.swift in Sources */,
+				1B351665270C66C300D6630A /* SettingsView.swift in Sources */,
+				37F999432736992600661FB4 /* IndicatorsAQIModel.swift in Sources */,
+				370A75302724AF5D001830CF /* StationModel.swift in Sources */,
+				1B351667270C696300D6630A /* LocationView.swift in Sources */,
+				1B35165C270C4A6B00D6630A /* MainTabView.swift in Sources */,
+				1B1E851B270B127E00BCEFD7 /* LocationManagerViewModel.swift in Sources */,
+				1BE389F2270EF8050009C9AA /* QualityModel.swift in Sources */,
+				1B78ECB9270B025C004D3FCF /* RootView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		1B78ECB2270B024C004D3FCF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		1B78ECB3270B024C004D3FCF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		1B78ECB5270B024C004D3FCF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B0EEC819CEB4550B5F571AA5 /* Pods-Easy4EcoMap.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Easy4EcoMap/Preview Content\"";
+				DEVELOPMENT_TEAM = 5RVS7LV4U3;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Easy4EcoMap/common/Info.plist;
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = danyaqq.Easy4EcoMap;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		1B78ECB6270B024C004D3FCF /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B77C9C941081208B1B0B22C9 /* Pods-Easy4EcoMap.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Easy4EcoMap/Preview Content\"";
+				DEVELOPMENT_TEAM = 5RVS7LV4U3;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Easy4EcoMap/common/Info.plist;
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = danyaqq.Easy4EcoMap;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1B78ECA1270B024B004D3FCF /* Build configuration list for PBXProject "Easy4EcoMap" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1B78ECB2270B024C004D3FCF /* Debug */,
+				1B78ECB3270B024C004D3FCF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1B78ECB4270B024C004D3FCF /* Build configuration list for PBXNativeTarget "Easy4EcoMap" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1B78ECB5270B024C004D3FCF /* Debug */,
+				1B78ECB6270B024C004D3FCF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		1B35165D270C5B2100D6630A /* XCRemoteSwiftPackageReference "swiftui-charts" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/spacenation/swiftui-charts";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		1B35165E270C5B2100D6630A /* Charts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1B35165D270C5B2100D6630A /* XCRemoteSwiftPackageReference "swiftui-charts" */;
+			productName = Charts;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 1B78EC9E270B024B004D3FCF /* Project object */;
+}
