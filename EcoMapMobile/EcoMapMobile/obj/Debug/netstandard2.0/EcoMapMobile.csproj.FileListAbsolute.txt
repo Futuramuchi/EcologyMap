@@ -26,3 +26,4 @@ C:\Users\Yana1\source\repos\EcoMapMobile\EcoMapMobile\EcoMapMobile\bin\Debug\net
 C:\Users\Yana1\source\repos\EcoMapMobile\EcoMapMobile\EcoMapMobile\bin\Debug\netstandard2.0\Mono.Android.pdb
 C:\Users\Yana1\source\repos\EcoMapMobile\EcoMapMobile\EcoMapMobile\bin\Debug\netstandard2.0\Mono.Android.xml
 C:\Users\Yana1\source\repos\EcoMapMobile\EcoMapMobile\EcoMapMobile\obj\Debug\netstandard2.0\EcoMapMobile.csproj.CopyComplete
+C:\Users\Yana1\source\repos\EcoMapMobile\EcoMapMobile\EcoMapMobile\obj\Debug\netstandard2.0\EcoMapMobile.csproj.AssemblyReference.cache

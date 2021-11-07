@@ -1,14 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "uIrK5mq1adtq0xW+DlV+cnfYVX9F6+wFWGEc+OHapkmfZri5ZMp4+0/DA9JMwzcP7lgptS43uN+eNYzIif07oA==",
+  "dgSpecHash": "r33GPaYd8Uq4bOEQHVANx1AI0Y0W0zIjRB2pKOuBNMh8hnxeMq9A/AQuc4FkumJkevasHj3vh2oA3/tJnrv7kQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\Yana1\\source\\repos\\EcoMapMobile\\EcoMapMobile\\EcoMapMobile\\EcoMapMobile.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Yana1\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\Yana1\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
     "C:\\Users\\Yana1\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
-    "C:\\Users\\Yana1\\.nuget\\packages\\xamarin.essentials\\1.6.1\\xamarin.essentials.1.6.1.nupkg.sha512",
-    "C:\\Users\\Yana1\\.nuget\\packages\\xamarin.forms\\5.0.0.2012\\xamarin.forms.5.0.0.2012.nupkg.sha512"
+    "C:\\Users\\Yana1\\.nuget\\packages\\xamarin.essentials\\1.7.0\\xamarin.essentials.1.7.0.nupkg.sha512",
+    "C:\\Users\\Yana1\\.nuget\\packages\\xamarin.forms\\5.0.0.2012\\xamarin.forms.5.0.0.2012.nupkg.sha512",
+    "C:\\Users\\Yana1\\.nuget\\packages\\xamarin.forms.maps\\5.0.0.2012\\xamarin.forms.maps.5.0.0.2012.nupkg.sha512"
   ],
   "logs": []
 }

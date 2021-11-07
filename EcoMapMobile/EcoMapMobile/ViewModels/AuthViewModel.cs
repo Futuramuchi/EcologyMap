@@ -3,6 +3,9 @@ using EcoMapMobile.Views;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading;
+using System.Threading.Tasks;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 
 namespace EcoMapMobile.ViewModels
@@ -16,18 +19,20 @@ namespace EcoMapMobile.ViewModels
         private string _password;
 
         public Command Authorisation { get; }
-
+        CancellationTokenSource cts;
 
         public AuthViewModel()
         {
             Authorisation = new Command(Auth);
         }
 
-        private async void Auth(object b)
+
+        private void Auth(object b)
         {
             if (!string.IsNullOrEmpty(_login) || string.IsNullOrEmpty(_password))
             {
-                
+                Application.Current.MainPage = new AppShell();
+                //await Shell.Current.GoToAsync(nameof(Indicators));
             }
         }
     }

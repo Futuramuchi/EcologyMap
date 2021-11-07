@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EcoMapMobile.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,6 +16,8 @@ namespace EcoMapMobile.Views
         public Indicators()
         {
             InitializeComponent();
+            BindingContext = new IndicatorsViewModel();
+
         }
     }
 }

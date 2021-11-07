@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:viewmodels="clr-namespace:EcoMapMobile.ViewModels" x:DataType="viewmodels:IndicatorsViewModel"
              x:Class="EcoMapMobile.Views.Indicators"
              BackgroundColor="#3B3B3B"
             NavigationPage.HasNavigationBar="False">
@@ -16,12 +16,12 @@
             <Frame HasShadow="False" BackgroundColor="#454545" CornerRadius="8" Padding="7" Margin="10, 5, 10, 5">
                 <StackLayout Orientation="Horizontal">
                     <Image Source="/Resources/pin.png" WidthRequest="20"/>
-                    <Label Text="г.Москва, район Останкинский"
+                    <Label Text="{Binding Address}"
                        Style="{StaticResource LblMain}" FontSize="20"
                            WidthRequest="305"/>
 
-                    <Image Source="/Resources/user_settings.png" WidthRequest="20"/>
-                </StackLayout>
+                        <ImageButton Source="/Resources/user_settings.png" WidthRequest="20" BackgroundColor="Transparent"/>
+                    </StackLayout>
             </Frame>
 
             <StackLayout Orientation="Horizontal" HorizontalOptions="Center">

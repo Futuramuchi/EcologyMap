@@ -1,3 +1,4 @@
+using Android;
 using Android.App;
 using Xamarin.Forms.Xaml;
 
